@@ -15,7 +15,6 @@ const Header = () => {
             <li><Link to='contact'>Contact us</Link></li>
             <span className={s.logoBg}></span>
             <li><Link to="/"><img className={s.headerLogo} src={logo} alt="logo"/></Link> </li>
-
           </ul>
         </nav>
       </div>

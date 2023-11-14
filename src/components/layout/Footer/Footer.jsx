@@ -1,8 +1,13 @@
+import s from './Footer.module.scss'
+
 const Footer = () => {
   return (
-    <div className="container">
-      Footer
-    </div>
+    <footer className={s.footer}>
+      <div className="container">
+
+        Footer
+      </div>
+    </footer>
   );
 };
 

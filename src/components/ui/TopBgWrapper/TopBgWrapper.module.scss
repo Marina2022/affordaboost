@@ -3,18 +3,18 @@
   background-position-x: center;
   position: relative;
   background-repeat: no-repeat;
-
+  background-size: cover;
 }
 
 .secondBg {
   position: absolute;
   left: 50%;
-
   transform: translateX(-50%);
   width: 881px;
   height: 484px;
   border-radius: 881px;
-  background: rgba(0, 0, 0, 0.60);
+  //background: rgba(0, 0, 0, 0.6);
+  background: rgba(0, 0, 0, 0.8);
   mix-blend-mode: multiply;
   filter: blur(50px);
 }
