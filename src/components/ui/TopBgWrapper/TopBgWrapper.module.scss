@@ -1,0 +1,30 @@
+.bgWrapper {
+  background: radial-gradient(83.92% 80.16% at 41.42% 20.3%, rgba(0, 0, 0, 0.00) 57.81%, #101614 100%), url(@/assets/main-bg.png), lightgray 50% / cover ;
+  background-position-x: center;
+  position: relative;
+  background-repeat: no-repeat;
+
+}
+
+.secondBg {
+  position: absolute;
+  left: 50%;
+
+  transform: translateX(-50%);
+  width: 881px;
+  height: 484px;
+  border-radius: 881px;
+  background: rgba(0, 0, 0, 0.60);
+  mix-blend-mode: multiply;
+  filter: blur(50px);
+}
+
+.thirdBg {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 816px;
+  height: 638px;
+  transform: translateX(-50%);
+  background: url(@/assets/main-bg-2.png) top center no-repeat;
+}

@@ -1,0 +1,33 @@
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+a, button {
+  font-family: inherit;
+  color: inherit;
+  text-decoration: none;
+  border: none;
+  outline: none;
+  background: none;
+  cursor: pointer;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+
+body {
+  font-family: 'Gabarito', serif;
+  background-color: #101614;
+  color: #ffffff;
+}
+
+.container {
+  max-width: 1288px;
+  margin: 0 auto;
+  flex-grow: 1;
+}

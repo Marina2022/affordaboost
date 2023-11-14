@@ -1,0 +1,47 @@
+.buttons {
+  display: flex;
+  max-width: 511px;
+  justify-content: space-between;
+}
+
+.boostingBtn {
+  text-shadow: 0px -1px 0px #fff5d7;
+  font-weight: 900;
+  padding: 18px 28px 14px;
+  border-radius: 5px;
+  background: #0EF3CA;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  color: #41330B;
+  text-transform: uppercase;
+}
+
+.coachingBtn {
+  text-shadow: 0px -1px 0px #fff5d7;
+  font-weight: 900;
+  padding: 18px 28px 14px;
+  border-radius: 5px;
+  background: #D9C17B;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  color: #41330B;
+  text-transform: uppercase;
+}
+
+.getYourWrap {
+  font-size: 20px;
+  line-height: 16px; /* 130% */
+  letter-spacing: 1.5px;
+  display: flex;
+  align-items: center;
+  margin-bottom: -5px;
+}
+
+.getYourText {
+  margin-right: 12px;
+}
+
+.btnBottomText {
+  font-size: 35px;
+}
+
+
+

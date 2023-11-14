@@ -1,0 +1,64 @@
+.header {
+  height: 100px;
+  display: flex;
+  align-items: center;
+  font-size: 22px;
+  font-weight: 900;
+  line-height: 80px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-image: linear-gradient(90deg,  #097764 0%, rgba(0, 0, 0, 0.00) 50%,  #097764 100%);
+  z-index: 1;
+  background-blend-mode: screen;
+}
+.mainNav {
+  padding-inline: 76px;
+
+  li {
+    text-transform: uppercase;
+  }
+
+
+  li:not(:last-child) {
+    margin-right: 48px;
+  }
+}
+
+.secondItem {
+  margin-right: auto!important;
+}
+
+.navList {
+  display: flex;
+  flex-grow: 1;
+  justify-content: space-between;
+  position: relative;
+}
+
+.headerLogo {
+  mix-blend-mode: normal;
+  width: 194px;
+  height: 232px;
+  z-index: 2;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.logoBg {
+  mix-blend-mode: normal;
+  width: 316px;
+  height: 316px;
+  border-radius: 316px;
+  background: rgba(204, 177, 78, 0.50);
+  mix-blend-mode: color;
+  filter: blur(50px);
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: block;
+}
+
+
