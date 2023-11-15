@@ -24,10 +24,29 @@ body {
   font-family: 'Gabarito', serif;
   background-color: #101614;
   color: #ffffff;
+  //overflow-x: hidden;
 }
 
 .container {
   max-width: 1288px;
   margin: 0 auto;
   flex-grow: 1;
+  width: 100%;
+  padding-inline: 32px;
+
+  @media (max-width: 744px) {
+    max-width: 1288px;
+    width: 100%;
+    padding-inline: 32px;
+  }
+
+  @media (max-width: 744px) {
+    width: 100%;
+    padding-inline: 32px;
+  }
+
+  @media (max-width: 390px) {
+    padding-inline: 16px;
+  }
+
 }

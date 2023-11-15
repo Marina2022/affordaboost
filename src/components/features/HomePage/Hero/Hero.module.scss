@@ -4,6 +4,8 @@
 }
 
 .mainTitle {
+  z-index: 2;
+  position: relative;
   text-align: center;
   color: #FFF;
   font-size: 110px;
@@ -15,10 +17,19 @@
   padding-top: 280px;
   max-width: 1094px;
   margin: 0 auto;
+
+  @media (max-width: 1320px) {
+    font-size: 80px;
+    max-width: 477px;
+    padding-top: 212px;
+  }
 }
 
 .headerSmall {
   font-size: 90px;
+  @media (max-width: 1320px) {
+    font-size: 60px;
+  }
 }
 
 .subtitle {

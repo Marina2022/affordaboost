@@ -3,16 +3,10 @@
   position: relative;
   z-index: 1;
 
-  background: url(@/assets/whyChooseUs/top-bg.png) top no-repeat,
-  url(@/assets/whyChooseUs/left-bottom-bg4.png) bottom 100px left no-repeat,
-  url(@/assets/whyChooseUs/right-bottom-bg2.png) bottom right no-repeat,
-  url(@/assets/whyChooseUs/svg-bg.svg) bottom no-repeat;
+  background: url(@/assets/whyChooseUs/top-bg.png) top left no-repeat;
 
-  background-blend-mode: normal, normal, normal, color-dodge;
+  background-blend-mode: normal, normal, normal, color-dodge, luminosity;
   background-size: auto, auto, auto, contain;
-
-
-  //background-size: contain;
 
   min-height: 3000px;
 }
@@ -26,7 +20,7 @@
   margin-bottom: 16px;
 }
 
-.getYourRankText {
+.subtitle {
   color: #D9C17B;
   font-size: 30px;
   font-weight: 900;
@@ -35,12 +29,15 @@
   text-transform: uppercase;
 }
 
-//.sliderWrapper {
-//  position: absolute;
-//  bottom: 0;
-//  height: 950px;
-//  width: 100%;
-//  background-image: url('@/assets/whyChooseUs/svg-bg.svg');
-//  background-blend-mode: color-dodge;
-//  background-size: cover;
-//}
+.reachText {
+  margin-top: 24px;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: normal;
+  margin-bottom: 118px;
+
+  @media (max-width: 1320px) {
+    margin-bottom: 72px;
+  }
+
+}
