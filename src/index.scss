@@ -50,6 +50,61 @@ body {
 
 .swiper-slide {
   width: 413px;
-  background: #D9C17B!important;
+
+  &:last-child {
+    width: 44px;
+
+    @media (max-width: 1320px) {
+      width: 10px;
+    }
+  }
 }
 
+
+.swiper-button-next:after, .swiper-button-prev:after {
+  position: absolute;
+  top: 150px;
+}
+
+.swiper-button-prev, .swiper-button-next {
+  position: absolute;
+  width: 0;
+  bottom: 0;
+  left: 50% !important;
+  background: none;
+}
+
+.swiper-button-prev:after {
+  background: url(@/assets/whyChooseUs/slider/fi_arrow-right.svg);
+  width: 48px;
+  height: 48px;
+  content: '';
+  transform: translateX(-50px) rotate(180deg);
+}
+
+.swiper-button-next:after {
+  background: url(@/assets/whyChooseUs/slider/fi_arrow-right.svg);
+  width: 48px;
+  height: 48px;
+  content: '';
+  transform: translateX(50px);
+  stroke: #0EF3CA;
+
+}
+
+.swiper-button-disabled:after {
+  opacity: 1 !important;
+  background: url(@/assets/whyChooseUs/slider/fi_arrow-right-gray.svg);
+
+}
+
+
+.swiper-slide {
+  &:last-child {
+    @media (max-width: 744px) {
+
+      display: none;
+
+    }
+  }
+}

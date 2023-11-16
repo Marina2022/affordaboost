@@ -1,37 +1,15 @@
 .wrapper {
-  //width: 1723px;
+
   width: 100%;
-  //overflow: auto;
-}
-
-.prevBtn {
-  position: absolute;
-  height: 100px;
-  width: 100px;
-  z-index: 21;
-  background: red;
-  &:disabled {
-    background: greenyellow;
+  height: 400px;
   }
+
+
+.emptySlide {
+  width: 1px;
+  height: 1px;
 }
 
-.nextBtn {
-  z-index: 21;
-  position: absolute;
-  left: 200px;
-  height: 100px;
-  width: 100px;
-  background: red;
-  &:disabled {
-    background: greenyellow;
-  }
+.swiper {
+  height: 400px;
 }
-
-//.emptySlide {
-//  width: 413px;
-//  height: 271px;
-//
-//  @media (max-width: 1320px) {
-//    width: 2013px;
-//  }
-//}
