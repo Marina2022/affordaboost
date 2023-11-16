@@ -24,11 +24,9 @@ body {
   font-family: 'Gabarito', serif;
   background-color: #101614;
   color: #ffffff;
-  //overflow-x: hidden;
 }
 
 .container {
-  //border: orange 1px solid;
   max-width: 1288px;
   margin: 0 auto;
   flex-grow: 1;
@@ -102,9 +100,9 @@ body {
 .swiper-slide {
   &:last-child {
     @media (max-width: 744px) {
-
       display: none;
-
     }
   }
 }
+
+

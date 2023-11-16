@@ -12,7 +12,6 @@ const Slider = () => {
 
   const swiperRef = useRef(null)
 
-
   return (
     <div className={s.wrapper}>
       <>
@@ -31,14 +30,13 @@ const Slider = () => {
               spaceBetween: 24
             }
           }}
-
         >
 
           {
-            slides.map((slide, index) => <SwiperSlide key={index}><Slide/></SwiperSlide>)
+            slides.map((slide, index) => <SwiperSlide key={index} ><Slide info={slide} /></SwiperSlide>)
           }
 
-          <SwiperSlide>
+          <SwiperSlide >
             <div className={s.emptySlide}></div>
           </SwiperSlide>
         </Swiper>
