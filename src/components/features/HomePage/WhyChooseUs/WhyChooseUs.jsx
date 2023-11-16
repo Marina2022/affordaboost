@@ -1,7 +1,7 @@
 import s from './WhyChooseUs.module.scss'
 
 
-import Slider from "@/components/features/HomePage/Slider/Slider.jsx";
+import Community from "@/components/features/HomePage/Community/Community.jsx";
 import WeBeleive from "@/components/features/HomePage/WeBelieve/WeBeleive.jsx";
 import PercentList from "@/components/features/HomePage/PercentList/PercentList.jsx";
 import Worldwide from "@/components/features/HomePage/Worldwide/Worldwide.jsx";
@@ -26,7 +26,7 @@ const WhyChooseUs = () => {
 
       </div>
 
-      <Slider/>
+      <Community/>
 
     </div>
   );
