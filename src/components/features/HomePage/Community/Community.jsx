@@ -19,10 +19,6 @@ const Community = () => {
           </svg>
         </div>
 
-        <div className={s.sliderWrapper}>
-          <Slider />
-        </div>
-
 
         <div className='container'>
           <h2 className={s.title}>
@@ -31,6 +27,9 @@ const Community = () => {
           <p className={s.subtitle}>
             What our clients say about us
           </p>
+          <div className={s.sliderWrapper}>
+            <Slider />
+          </div>
         </div>
       </div>
     </div>

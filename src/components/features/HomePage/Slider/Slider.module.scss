@@ -9,7 +9,7 @@
 }
 
 .swiper {
-  height: 400px;
+  //height: 400px;
 }
 
 .swiper-slide {
@@ -20,3 +20,29 @@
   align-items: stretch;
 }
 
+
+.btns {
+  position: relative;
+  z-index: 30;
+  display: flex;
+  width: 100px;
+  margin: 20px auto 0;
+
+  button {
+    position: absolute;
+    width: 0;
+    bottom: 0;
+    left: calc((100% + (100vw - 1288px) / 2) / 2 - (100vw - 1288px)/2 - 24px);
+    background: none;
+
+    @media (max-width: 1230px) {
+      left: calc(50% - 36px);
+    }
+
+    &:disabled {
+      color: red;
+    }
+  }
+
+
+}

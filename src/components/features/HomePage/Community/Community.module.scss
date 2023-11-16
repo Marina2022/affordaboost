@@ -123,19 +123,23 @@
 }
 
 .sliderWrapper {
-  position: absolute;
-  height: 467px;
+  position: relative;
+  //height: 467px;
   width: calc(1288px + (100vw - 1288px)/2);
-  top: 300px;
-  left: calc((100vw - 1288px)/2 + 24px) ;
+  //top: 300px;
+  //left: calc((100vw - 1288px)/2 + 24px) ;
 
   @media (max-width: 1320px) {
     width: calc(100vw - 32px);
-    left: 32px;
   }
 
   @media (max-width: 500px) {
-    width: calc(100vw - 32px);
-    left: 16px;
+    width: calc(100vw - 16px);
+    left: 0px;
   }
+  //
+  //@media (max-width: 466px) {
+  //
+  //  left: 0px;
+  //}
 }

@@ -20,10 +20,11 @@ const Slider = () => {
           spaceBetween={0}
           slidesPerView={1}
 
+          navigation={{ prevEl: '.prev', nextEl: '.next', clickable: true }}
+
           onSlideChange={(value) => console.log('slide change', value.activeIndex)}
           onSwiper={(swiper) => swiperRef.current = swiper}
           modules={[Navigation]}
-          navigation
           breakpoints={{
             880: {
               slidesPerView: 'auto',
@@ -40,6 +41,12 @@ const Slider = () => {
             <div className={s.emptySlide}></div>
           </SwiperSlide>
         </Swiper>
+
+        <div className={s.btns}>
+        <button className="prev"></button>
+        <br/>
+        <button className="next"></button>
+        </div>
       </>
     </div>
   );

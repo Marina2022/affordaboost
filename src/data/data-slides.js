@@ -10,7 +10,7 @@ export const slides = [
     rating: 4,
     author: 'Fernando Getza-2',
     title: 'Excellent service',
-    text: 'Excellent service, I am very happy that everything went well. I highly recommend it. ',
+    text: 'Excellent service, I am very happy that everything went well. I highly recommend it. Excellent service, I am very happy that everything went well. I highly recommend it',
     date: 'September 30, 2023'
   },{
     rating: 3,

@@ -72,7 +72,8 @@ body {
   background: none;
 }
 
-.swiper-button-prev:after {
+.prev:after {
+  position: absolute;
   background: url(@/assets/whyChooseUs/slider/fi_arrow-right.svg);
   width: 48px;
   height: 48px;
@@ -80,24 +81,25 @@ body {
   transform: translateX(-50px) rotate(180deg);
 }
 
-.swiper-button-next:after {
+.next:after {
+  position: absolute;
   background: url(@/assets/whyChooseUs/slider/fi_arrow-right.svg);
   width: 48px;
   height: 48px;
   content: '';
   transform: translateX(50px);
   stroke: #0EF3CA;
-
 }
 
 .swiper-button-disabled:after {
-  opacity: 1 !important;
+  opacity: .4!important;
   background: url(@/assets/whyChooseUs/slider/fi_arrow-right-gray.svg);
 
 }
 
 
 .swiper-slide {
+
   &:last-child {
     @media (max-width: 744px) {
       display: none;
@@ -106,3 +108,8 @@ body {
 }
 
 
+
+
+.swiper-slide {
+  height: auto!important;
+}
