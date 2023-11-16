@@ -21,6 +21,11 @@
 .mainNav {
   padding-inline: 76px;
 
+  @media (max-width: 1000px) {
+    padding-inline: 0;
+  }
+
+
   li {
     text-transform: uppercase;
   }
@@ -40,6 +45,10 @@
   flex-grow: 1;
   justify-content: space-between;
   position: relative;
+
+  @media (max-width: 744px) {
+display: none;
+  }
 }
 
 .headerLogo {

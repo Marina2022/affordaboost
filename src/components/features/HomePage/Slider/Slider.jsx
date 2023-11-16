@@ -9,13 +9,18 @@ const Slider = () => {
         <div className={s.bgRightBottom}></div>
         <div className={s.bgLeftBottom}></div>
 
-        <svg className={s.bgBottomSVG} xmlns="http://www.w3.org/2000/svg"
-             stroke="#101614" strokeWidth="3"
-             viewBox="0 0 1920 950" fill="none">
-          <g>
-            <path d="M0 117.5L1920 0V950L384.5 762.5L0 950V117.5Z"/>
-          </g>
-        </svg>
+        <div className={s.svgWrapper}>
+          <svg className={s.bgBottomSVG} xmlns="http://www.w3.org/2000/svg"
+               viewBox="0 0 1920 950" fill="none">
+            <g>
+              <path d="M0 117.5L1920 0V950L384.5 762.5L0 950V117.5Z"/>
+            </g>
+          </svg>
+        </div>
+
+        <div className={s.swiper}>
+          swiper
+        </div>
 
 
         <div className='container'>

@@ -1,13 +1,11 @@
 .whySection {
+  overflow: hidden ;
   margin-top: -100px;
   position: relative;
   z-index: 1;
-
   background: url(@/assets/whyChooseUs/top-bg.png) top left no-repeat;
-
   background-blend-mode: normal, normal, normal, color-dodge, luminosity;
   background-size: auto, auto, auto, contain;
-
   min-height: 3000px;
 }
 
@@ -18,6 +16,10 @@
   line-height: normal;
   letter-spacing: 3px;
   margin-bottom: 16px;
+
+  @media (max-width: 744px) {
+    font-size: 40px;
+  }
 }
 
 .subtitle {
@@ -27,6 +29,10 @@
   line-height: normal;
   letter-spacing: 3px;
   text-transform: uppercase;
+
+  @media (max-width: 744px) {
+    font-size: 24px;
+  }
 }
 
 .reachText {

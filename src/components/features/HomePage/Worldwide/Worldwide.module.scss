@@ -2,10 +2,15 @@
   max-width: 623px;
   margin-top: 304px;
   margin-bottom: 187px;
+  position: relative;
+  z-index: 1;
 
   @media (max-width: 1320px) {
     margin-top: 264px;
-    //margin-bottom: 687px;
+  }
+
+  @media (max-width: 1000px) {
+    margin-bottom: 412px;
   }
 }
 
@@ -18,6 +23,10 @@
   @media (max-width: 1320px) {
     font-size: 48px;
   }
+
+  @media (max-width: 744px) {
+    font-size: 40px;
+  }
 }
 
 .subtitle {
@@ -27,6 +36,9 @@
   letter-spacing: 3px;
   text-transform: uppercase;
   margin-bottom: 75px;
+  @media (max-width: 744px) {
+    font-size: 24px;
+  }
 
 }
 
