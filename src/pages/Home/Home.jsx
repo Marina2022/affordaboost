@@ -1,5 +1,7 @@
 import Hero from "@/components/features/HomePage/Hero/Hero.jsx";
 import WhyChooseUs from "@/components/features/HomePage/WhyChooseUs/WhyChooseUs.jsx";
+import s from './Home.module.scss'
+import FaqBlock from "@/components/features/HomePage/FaqBlock/FaqBlock.jsx";
 
 const Home = () => {
   return (
@@ -7,6 +9,7 @@ const Home = () => {
     <>
       <Hero/>
       <WhyChooseUs/>
+      <FaqBlock />
     </>
 
 
