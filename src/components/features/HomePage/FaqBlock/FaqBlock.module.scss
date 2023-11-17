@@ -1,3 +1,9 @@
+.faqBlock {
+  position: relative;
+  z-index: 10;
+  margin-bottom: -300px;
+}
+
 .faq {
   li:nth-child(5),li:nth-child(6) {
     div:first-child {
@@ -13,6 +19,13 @@
   font-weight: 900;
   letter-spacing: 3px;
   margin-top: -30px;
+
+  @media (max-width: 1320px) {
+    font-size: 48px;
+  }
+  @media (max-width: 744px) {
+    font-size: 30px;
+  }
 }
 
 .subtitle {
@@ -23,4 +36,11 @@
   text-transform: uppercase;
   margin-top: 24px;
   margin-bottom: 75px;
+
+  @media (max-width: 1320px) {
+    font-size: 40px;
+  }
+  @media (max-width: 744px) {
+    font-size: 24px;
+  }
 }

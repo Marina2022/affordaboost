@@ -33,8 +33,9 @@
   font-weight: 700;
   margin-bottom: 75px;
 
-  @media (max-width: 1320px) {
+  @media (max-width: 744px) {
     margin-bottom: 32px;
+    font-size: 24px;
   }
 }
 

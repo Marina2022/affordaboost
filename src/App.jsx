@@ -2,7 +2,7 @@ import {BrowserRouter, Navigate, Route, Routes} from 'react-router-dom'
 import AppLayout from "./components/layout/AppLayout/AppLayout.jsx";
 import Home from "./pages/Home/Home.jsx";
 import PageNotFound from "./pages/PageNotFound.jsx";
-import Boosting from "./pages/Boosting.jsx";
+import Boosting from "./pages/Boosting/Boosting.jsx";
 import Coaching from "./pages/Coaching.jsx";
 import Faq from "./pages/Faq.jsx";
 import Contact from "./pages/Contact.jsx";

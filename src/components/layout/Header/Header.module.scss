@@ -9,7 +9,7 @@
   top: 0;
   left: 0;
   right: 0;
-  background-image: linear-gradient(90deg,  #097764 0%, rgba(0, 0, 0, 0.00) 50%,  #097764 100%);
+  background-image: linear-gradient(90deg, #097764 0%, rgba(0, 0, 0, 0.00) 50%, #097764 100%);
   z-index: 1;
   background-blend-mode: screen;
 
@@ -17,7 +17,22 @@
     font-size: 18px;
   }
 
+  @media (max-width: 744px) {
+    background: transparent;
+  }
+
+  .overlay {
+    background: #15625E;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    inset: 0;
+    mix-blend-mode: multiply;
+  }
+
+
 }
+
 .mainNav {
   padding-inline: 76px;
 
@@ -37,7 +52,7 @@
 }
 
 .secondItem {
-  margin-right: auto!important;
+  margin-right: auto !important;
 }
 
 .navList {
@@ -47,7 +62,7 @@
   position: relative;
 
   @media (max-width: 744px) {
-display: none;
+    display: none;
   }
 }
 
@@ -85,4 +100,12 @@ display: none;
 
 }
 
+
+.mobileVisible {
+  display: none;
+
+  @media (max-width: 744px) {
+    display: block;
+  }
+}
 

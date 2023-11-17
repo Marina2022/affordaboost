@@ -66,6 +66,8 @@
 
 .svgWrapper {
   width: 100%;
+  max-width: 1920px;
+  margin: 0 auto;
   height: 950px;
   z-index: 1;
   position: absolute;
@@ -80,6 +82,8 @@
   mix-blend-mode: color-dodge;
   opacity: .3;
   height: 955px;
+  //width: 100%;
+
 
   @media (max-width: 1320px) {
     height: 955px;
@@ -102,7 +106,7 @@
   }
 
   @media (max-width: 744px) {
-    font-size: 40px;
+    font-size: 30px;
   }
 
 }

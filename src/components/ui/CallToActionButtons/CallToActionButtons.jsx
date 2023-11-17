@@ -24,7 +24,7 @@ const CallToActionButtons = ({classname}) => {
         </div>
       </Link>
 
-      <Link to='/boosting' className={s.coachingBtn}>
+      <Link to='/coaching' className={s.coachingBtn}>
         <div className={s.getYourWrap}>
           <span className={s.getYourText}>GET your</span>
           <svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24" fill="none">

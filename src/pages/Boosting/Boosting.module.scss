@@ -1,0 +1,38 @@
+.boosting {
+  width: 100%;
+  height: 800px;
+  background: #fff;
+  //padding-top: 200px;
+  padding-left: 100px;
+  position: relative;
+}
+
+.circle {
+  //position: absolute;
+  border-radius: 50%;
+  background: yellow;
+  height: 200px;
+  width: 200px;
+}
+
+.red {
+  //position: absolute;
+  margin-top: -100px;
+  border-radius: 50%;
+  background: red;
+  height: 200px;
+  width: 200px;
+  margin-left: 100px;
+
+}
+
+
+.circle3 {
+  //position: absolute;
+  border-radius: 50%;
+  background: blue;
+  height: 100px;
+  width: 100px;
+  margin-left: -10px;
+  mix-blend-mode: color;
+}
