@@ -7,6 +7,7 @@ import StopHesitating from "@/components/layout/StopHesitating/StopHesitating.js
 const AppLayout = () => {
   return (
     <div>
+      <div className={s.mobileHeaderOverlay}></div>
       <Header/>
       <main className={s.main}>
 

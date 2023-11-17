@@ -5,7 +5,7 @@ import PageNotFound from "./pages/PageNotFound.jsx";
 import Boosting from "./pages/Boosting/Boosting.jsx";
 import Coaching from "./pages/Coaching.jsx";
 import Faq from "./pages/Faq.jsx";
-import Contact from "./pages/Contact.jsx";
+import Contact from "./pages/Contact/Contact.jsx";
 
 function App() {
   return (

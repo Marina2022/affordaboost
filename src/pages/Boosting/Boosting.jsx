@@ -5,10 +5,11 @@ const Boosting = () => {
     <div className={s.boosting}>
 
 
-      <div className={s.circle}></div>
+      <div className={s.yellow}></div>
 
-      <div className={s.red}>
-        <div className={s.circle3}>
+      <div className={s.transparent}>
+        <div className={s.overlay}>
+          overlay
         </div>
       </div>
 

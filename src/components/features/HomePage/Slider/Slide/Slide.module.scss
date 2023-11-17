@@ -10,7 +10,7 @@
   border-radius: 5px;
 
   @media (max-width: 500px) {
-    max-width: 413px;
+    max-width: unset;
     width: calc(100vw - 32px);
   }
 }

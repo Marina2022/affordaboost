@@ -7,32 +7,33 @@
   position: relative;
 }
 
-.circle {
+.yellow {
   //position: absolute;
-  border-radius: 50%;
+  margin-top: 200px;
   background: yellow;
-  height: 200px;
-  width: 200px;
+  height: 500px;
+  width: 500px;
 }
 
-.red {
-  //position: absolute;
-  margin-top: -100px;
-  border-radius: 50%;
-  background: red;
+.transparent {
+  //position: relative;
+  margin-top: -200px;
   height: 200px;
-  width: 200px;
+  width: 400px;
   margin-left: 100px;
-
+  color: #fff;
+  background: transparent;
 }
 
 
-.circle3 {
-  //position: absolute;
-  border-radius: 50%;
-  background: blue;
+.overlay {
+  margin-top: -100px;
+  z-index: 1;
+  position: absolute;
+  top: 0;
+  background: #15625E;
   height: 100px;
-  width: 100px;
+  width: 200px;
   margin-left: -10px;
-  mix-blend-mode: color;
+  mix-blend-mode: multiply;
 }

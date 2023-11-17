@@ -3,7 +3,23 @@
 }
 
 .stopHesitating {
-  //margin-top: -300px;
   position: relative;
   z-index: 3;
+}
+
+.mobileHeaderOverlay {
+  display: none;
+
+  @media (max-width: 744px) {
+    display: block;
+    z-index: 1;
+    height: 100px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    background: #15625E;
+    mix-blend-mode: multiply;
+  }
 }
