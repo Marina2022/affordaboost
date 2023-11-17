@@ -76,7 +76,7 @@ display: none;
   filter: blur(50px);
   position: absolute;
   left: 50%;
-  transform: translateX(-50%, -100px);
+  transform: translateX(-50%);
   display: block;
 
   @media (max-width: 1320px) {

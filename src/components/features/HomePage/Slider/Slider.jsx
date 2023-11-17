@@ -20,9 +20,7 @@ const Slider = () => {
           spaceBetween={0}
           slidesPerView={1}
 
-          navigation={{ prevEl: '.prev', nextEl: '.next', clickable: true }}
-
-          onSlideChange={(value) => console.log('slide change', value.activeIndex)}
+          navigation={{ prevEl: '.prev', nextEl: '.next' }}
           onSwiper={(swiper) => swiperRef.current = swiper}
           modules={[Navigation]}
           breakpoints={{
