@@ -4,8 +4,9 @@ import Home from "./pages/Home/Home.jsx";
 import PageNotFound from "./pages/PageNotFound.jsx";
 import Boosting from "./pages/Boosting/Boosting.jsx";
 import Coaching from "./pages/Coaching.jsx";
-import Faq from "./pages/Faq.jsx";
+import Faq from "./pages/FaqPage/FaqPage.jsx";
 import Contact from "./pages/Contact/Contact.jsx";
+import FaqPage from "./pages/FaqPage/FaqPage.jsx";
 
 function App() {
   return (
@@ -15,7 +16,7 @@ function App() {
           <Route path='/' element={<Home/>}/>
           <Route path='/boosting' element={<Boosting/>}/>
           <Route path='/coaching' element={<Coaching/>}/>
-          <Route path='/faq' element={<Faq/>}/>
+          <Route path='/faq' element={<FaqPage/>}/>
           <Route path='/contact' element={<Contact/>}/>
         </Route>
         <Route path='*' element={<PageNotFound/>}/>

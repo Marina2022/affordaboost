@@ -3,15 +3,16 @@
   background-position-x: center;
   position: relative;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: contain;
 
   @media (max-width: 1320px) {
     background-size: contain, contain;
   }
 
   @media (max-width: 744px) {
-    background-size: cover, cover;
-    background-position-y: 00px ;
+    //background-size: cover, cover;
+    background-size: cover, 1920px;
+    background-position-y: 0;
     background-position-x: 0, -500px ;
   }
 
@@ -30,12 +31,10 @@
 
   @media (max-width: 1320px) {
     width: 475.76px;
-    //height: 371.979px;
     height: 600px;
   }
 
   @media (max-width: 744px) {
-    //display: none;
     width: 100%;
   }
 }
