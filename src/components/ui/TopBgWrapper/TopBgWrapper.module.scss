@@ -1,5 +1,5 @@
 .bgWrapper {
-  background: radial-gradient(83.92% 80.16% at 41.42% 20.3%, rgba(0, 0, 0, 0.00) 57.81%, #101614 100%), url(@/assets/main-bg.png)  ;
+  background: radial-gradient(83.92% 80.16% at 41.42% 20.3%, rgba(0, 0, 0, 0.00) 57.81%, #101614 100%), url(@/assets/main-bg.png);
   background-position-x: center;
   position: relative;
   background-repeat: no-repeat;
@@ -10,10 +10,9 @@
   }
 
   @media (max-width: 744px) {
-    //background-size: cover, cover;
     background-size: cover, 1920px;
     background-position-y: 0;
-    background-position-x: 0, -500px ;
+    background-position-x: 0, -500px;
   }
 
 }
@@ -36,6 +35,8 @@
 
   @media (max-width: 744px) {
     width: 100%;
+    margin-top: 26%;
+
   }
 }
 
