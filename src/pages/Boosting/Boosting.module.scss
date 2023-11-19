@@ -1,39 +1,127 @@
-.boosting {
-  width: 100%;
-  height: 800px;
-  background: #fff;
-  //padding-top: 200px;
-  padding-left: 100px;
+.main {
+  padding-top: 200px;
+  min-height: 1112px;
   position: relative;
+  margin-bottom: -200px;
+  z-index: 4;
+
+  @media (max-width: 744px) {
+    margin-bottom: -100px;
+  }
 }
 
-.yellow {
-  //position: absolute;
-  margin-top: 200px;
-  background: yellow;
-  height: 500px;
-  width: 500px;
+.title {
+  position: relative;
+  z-index: 0;
+  margin-top: 90px;
+  font-size: 60px;
+  font-weight: 900;
+  letter-spacing: 3px;
+
+  @media (max-width: 1320px) {
+    font-size: 60px;
+  }
+  @media (max-width: 744px) {
+    font-size: 40px;
+  }
 }
 
-.transparent {
-  //position: relative;
-  margin-top: -200px;
-  height: 200px;
-  width: 400px;
-  margin-left: 100px;
-  color: #fff;
-  background: transparent;
+.subtitle {
+  position: relative;
+  z-index: 0;
+  margin-top: 24px;
+  color: #D9C17B;
+  font-size: 30px;
+  font-weight: 900;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+
+
+  @media (max-width: 1320px) {
+    font-size: 40px;
+    max-width: 1000px;
+  }
+  @media (max-width: 744px) {
+    font-size: 24px;
+  }
 }
 
+.cardsContainer {
+  margin-top: 150px;
 
-.overlay {
-  margin-top: -100px;
-  z-index: 1;
+  @media (max-width: 1320px){
+    margin-top: 75px;
+  }
+}
+
+.middleBg {
+  display: none;
   position: absolute;
-  top: 0;
-  background: #15625E;
-  height: 100px;
-  width: 200px;
-  margin-left: -10px;
-  mix-blend-mode: multiply;
+  top: 700px;
+  width: 100vw;
+
+  background: radial-gradient(83.92% 13.16% at 41.42% 20.3%, rgba(0, 0, 0, 0.00) 57.81%, #101614 100%) no-repeat, url(@/assets/whyChooseUs/top-bg.png) right -500px top 100px no-repeat;
+  background-size: 3021px 1726px, contain;
+  height: 1200px;
+  z-index: 0;
+
+  @media (max-width: 1320px) {
+    display: block;
+  }
+
+  @media (max-width: 744px) {
+    top: 1000px;
+  }
+
+  @media (max-width: 660px) {
+    background: radial-gradient(83.92% 13.16% at 41.42% 20.3%, rgba(0, 0, 0, 0.00) 57.81%, #101614 100%) no-repeat, url(@/assets/whyChooseUs/top-bg.png) right -1200px top 100px no-repeat;
+  }
+}
+
+.cardsContainer {
+  position: relative;
+  z-index: 1;
+}
+
+.coachText {
+  margin-top: 24px;
+  display: flex;
+
+  @media (max-width: 1320px) {
+    flex-wrap: wrap;
+  }
+}
+
+.textLeft {
+  width: 50%;
+  font-size: 32px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  margin-right: 48px;
+
+  @media (max-width: 1320px) {
+    width: 100%;
+    max-width: 700px;
+    margin-bottom: 48px;
+  }
+}
+
+.textRight {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 3px;
+  max-width: 440px;
+
+  @media (max-width: 1320px) {
+    width: 100%;
+    max-width: 700px;
+  }
+}
+
+.boostingBg {
+  @media (max-width: 1320px) and (min-width:744px) {
+    background: radial-gradient(73.92% 19.16% at 31.42% 8%, rgba(0, 0, 0, 0) 51.81%, #101614 100%), url(/src/assets/main-bg.png);
+    background-position-x: 0, -500px;
+  }
 }

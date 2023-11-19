@@ -11,7 +11,7 @@ const onScrollBtnClick = () => {
 
 const Hero = () => {
   return (
-    <TopBgWrapper>
+    <TopBgWrapper classname={s.bgWrapperHome}>
       <div className="container">
         <div className={s.main}>
           <h1 className={s.mainTitle}>

@@ -1,5 +1,4 @@
 .header {
-  //border-bottom: darkred 1px solid;
   height: 100px;
   display: flex;
   align-items: center;
@@ -11,7 +10,7 @@
   left: 0;
   right: 0;
   background-image: linear-gradient(90deg, #097764 0%, rgba(0, 0, 0, 0.00) 50%, #097764 100%);
-  z-index: 10;
+  z-index: 1000;
   background-blend-mode: screen;
 
   @media (max-width: 1320px) {
@@ -60,7 +59,7 @@
   mix-blend-mode: normal;
   width: 194px;
   height: 232px;
-  z-index: 2;
+  z-index: 200;
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
@@ -86,6 +85,7 @@
 
   @media (max-width: 1320px) {
     transform: translate(-50%, -100px);
+    display: none;
   }
 }
 

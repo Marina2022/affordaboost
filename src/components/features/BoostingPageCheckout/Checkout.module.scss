@@ -1,0 +1,13 @@
+.checkoutBlock {
+  width: 100%;
+  height: 697px;
+  border: red 1px solid;
+
+  @media (max-width: 1320px) {
+    height: 1647px;
+  }
+
+  @media (max-width: 744px) {
+    height: 1787px;
+  }
+}

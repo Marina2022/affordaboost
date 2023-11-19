@@ -77,3 +77,22 @@
 .scrollBtn {
   margin-bottom: 241px;
 }
+
+
+.bgWrapperHome {
+  background: radial-gradient(83.92% 73.16% at 41.42% 20.3%, rgba(0, 0, 0, 0.00) 57.81%, #101614 100%), url(@/assets/main-bg.png);
+
+  @media(min-width: 1321px) {
+    background: radial-gradient(83.92% 73.16% at 41.42% 20.3%, rgba(0, 0, 0, 0.00) 57.81%, #101614 100%), url(@/assets/main-bg.png);
+    background-position-x: center, center;
+    position: relative;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+
+  @media (max-width: 1320px) {
+    background-size: contain, contain;
+    background: radial-gradient(83.92% 80.16% at 41.42% 20.3%, rgba(0, 0, 0, 0.00) 57.81%, #101614 100%), url(@/assets/main-bg.png);
+    background-position-x: 0, -500px;
+  }
+}

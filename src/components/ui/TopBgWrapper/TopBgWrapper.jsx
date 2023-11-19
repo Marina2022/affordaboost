@@ -1,10 +1,13 @@
 import s from './TopBgWrapper.module.scss'
+import cn from "classnames";
 
-const TopBgWrapper = ({children}) => {
+const TopBgWrapper = ({children, classname}) => {
   return (
-    <div className={s.bgWrapper}>
+    <div className={cn(s.bgWrapper, classname)}>
       <div className={s.secondBg}></div>
       <div className={s.thirdBg}></div>
+      <div className={s.logoBg}></div>
+
       {children}
     </div>
   );

@@ -3,7 +3,7 @@ import AppLayout from "./components/layout/AppLayout/AppLayout.jsx";
 import Home from "./pages/Home/Home.jsx";
 import PageNotFound from "./pages/PageNotFound.jsx";
 import Boosting from "./pages/Boosting/Boosting.jsx";
-import Coaching from "./pages/Coaching.jsx";
+import Coaching from "./pages/Coaching/Coaching.jsx";
 import Faq from "./pages/FaqPage/FaqPage.jsx";
 import Contact from "./pages/Contact/Contact.jsx";
 import FaqPage from "./pages/FaqPage/FaqPage.jsx";

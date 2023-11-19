@@ -1,19 +1,21 @@
 import s from './Boosting.module.scss'
+import TopBgWrapper from "@/components/ui/TopBgWrapper/TopBgWrapper.jsx";
+import Checkout from "@/components/features/BoostingPageCheckout/Checkout.jsx";
 
 const Boosting = () => {
   return (
-    <div className={s.boosting}>
-
-
-      <div className={s.yellow}></div>
-
-      <div className={s.transparent}>
-        <div className={s.overlay}>
-          overlay
+    <TopBgWrapper classname={s.boostingBg}>
+      <div className={s.middleBg}></div>
+      <div className='container'>s
+        <div className={s.main}>
+          <h1 className={s.title}>Coaching</h1>
+          <p className={s.subtitle}>Improve your skills under the guidance of the best players </p>
+          <div className={s.cardsContainer}>
+            <Checkout/>
+          </div>
         </div>
       </div>
-
-    </div>
+    </TopBgWrapper>
   );
 };
 

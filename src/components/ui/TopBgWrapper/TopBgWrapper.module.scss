@@ -1,15 +1,19 @@
+
 .bgWrapper {
-  background: radial-gradient(83.92% 80.16% at 41.42% 20.3%, rgba(0, 0, 0, 0.00) 57.81%, #101614 100%), url(@/assets/main-bg.png);
-  background-position-x: center;
+  background: radial-gradient(83.92% 40.16% at 41.42% 20.3%, rgba(0, 0, 0, 0.00) -73.19%, #101614 100%), url(@/assets/main-bg.png);
+  background-position-x: center, center;
   position: relative;
   background-repeat: no-repeat;
   background-size: contain;
 
   @media (max-width: 1320px) {
-    background-size: contain, contain;
+    background-size: cover, contain;
+    background: radial-gradient(83.92% 20.16% at 41.42% 20.3%, rgba(0, 0, 0, 0.00) 57.81%, #101614 100%), url(@/assets/main-bg.png);
+    background-position-x: 0, -500px;
   }
 
   @media (max-width: 744px) {
+    background: radial-gradient(83.92% 38.16% at 41.42% 20.3%, rgba(0, 0, 0, 0.00) 57.81%, #101614 100%), url(@/assets/main-bg.png);
     background-size: cover, 1920px;
     background-position-y: 0;
     background-position-x: 0, -500px;
@@ -57,5 +61,26 @@
 
   @media (max-width: 744px) {
     display: none;
+  }
+}
+
+.logoBg {
+  border: red 1px solid;
+  z-index: 11;
+  width: 316px;
+  height: 316px;
+  border-radius: 316px;
+  background: rgba(204, 177, 78, 0.50);
+  //mix-blend-mode: color;
+  filter: blur(50px);
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: block;
+
+  @media (max-width: 1320px) {
+    transform: translate(-50%, -100px);
+    z-index: 0;
+    mix-blend-mode: color;
   }
 }
