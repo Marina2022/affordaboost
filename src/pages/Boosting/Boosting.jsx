@@ -8,8 +8,8 @@ const Boosting = () => {
       <div className={s.middleBg}></div>
       <div className='container'>s
         <div className={s.main}>
-          <h1 className={s.title}>Coaching</h1>
-          <p className={s.subtitle}>Improve your skills under the guidance of the best players </p>
+          <h1 className={s.title}>Boosting</h1>
+          <p className={s.subtitle}>Leading League & Division Rank Up Service</p>
           <div className={s.cardsContainer}>
             <Checkout/>
           </div>

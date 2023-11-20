@@ -1,7 +1,7 @@
-import Select from 'react-select'
 
 import s from './CoachingCard.module.scss';
 import {useState} from "react";
+import Select from "@/components/ui/Select/Select.jsx";
 
 
 const CoachingCard = ({card}) => {
@@ -40,55 +40,9 @@ const CoachingCard = ({card}) => {
 
         <div className={s.order}>
           <p className={s.orderLabel}>Order:</p>
-          <Select
-            options={card.options}
-            onChange={selectChangeHandler}
-            theme={(theme) => ({
-              ...theme,
-              colors: {
-                ...theme.colors,
-                primary25: '#ddd',
-                primary: '#777',
-              },
-            })}
-            defaultValue={card.options[0]}
-            styles={{
-              control: (baseStyles) => ({
-                ...baseStyles,
-                height: 48,
-                paddingLeft: '4px',
-                fontSize: 16,
-                borderColor: '#0ECFAC',
-                cursor: 'pointer',
-                background: '#B8EADC',
-                width: '100%',
-              }),
 
-              indicatorSeparator: (baseStyles) => ({
-                ...baseStyles,
-                display: 'none',
-              }),
+          <Select options={card.options} selectChangeHandler={selectChangeHandler} defaultValue={card.options[0]} />
 
-              dropdownIndicator: (baseStyles) => ({
-                ...baseStyles,
-                color: '#6c757d',
-              }),
-
-              menu: (baseStyles) => ({
-                ...baseStyles,
-                background: '#B8EADC',
-              }),
-
-              option: (baseStyles) => ({
-                ...baseStyles,
-                fontSize: 16,
-                lineHeight: 1.4,
-                color: '#08291E',
-                background: '#B8EADC',
-                width: 300,
-              }),
-            }}
-          />
           <button onClick={() => console.log('price to pay =', resultPrice)}
                   className={s.orderBtn}>
             <div className={s.btnTextWrapper}>

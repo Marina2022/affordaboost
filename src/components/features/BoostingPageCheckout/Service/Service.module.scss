@@ -1,0 +1,27 @@
+.item {
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+
+  font-size: 14px;
+  font-weight: 400;
+
+}
+
+.title {
+  margin-right: 10px;
+}
+
+.price {
+  color: #111614;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 400;
+  border-radius: 5px;
+  background: #D9C17B;
+  padding: 2px 4px;
+}
+
+.check {
+  margin-left: auto ;
+}

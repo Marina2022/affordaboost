@@ -3,6 +3,7 @@
   height: 697px;
   border: red 1px solid;
 
+
   @media (max-width: 1320px) {
     height: 1647px;
   }
@@ -10,4 +11,168 @@
   @media (max-width: 744px) {
     height: 1787px;
   }
+}
+
+.wrapper {
+  display: flex;
+}
+
+.ranksPart {
+  width: 759px;
+  margin-right: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.generalRankBlock {
+  border-radius: 20px;
+  background: rgba(0, 99, 81, 0.50);
+  padding: 32px 24px;
+}
+
+.checkoutPart {
+  max-width: 519px;
+  padding: 32px 24px;
+  border-radius: 20px;
+  border: 3px solid #083C32;
+  background: #101513;
+  flex-grow: 1;
+}
+
+.rankHeader {
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 900;
+  line-height: normal;
+  letter-spacing: 3px;
+}
+
+.headerWrapper {
+  display: flex;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.headerImg {
+  height: 50px;
+  width: 50px;
+  object-fit: cover;
+  margin-right: 16px;
+
+}
+
+
+.rankImgs {
+  display: flex;
+  margin-bottom: 24px;
+
+  li {
+    margin-right: 4px;
+  }
+}
+
+.rankImgItem {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 7.5px;
+  background: rgba(14, 243, 202, 0.30);
+}
+
+.rankImgItemActive {
+  background: rgba(14, 243, 202, 0.80) !important;
+}
+
+
+.rankNumbers {
+  display: flex;
+  margin-bottom: 16px;
+
+  li {
+    margin-right: 4px;
+  }
+}
+
+.rankNumberItem {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 7.5px;
+  background: rgba(14, 243, 202, 0.30);
+}
+
+.rankNumberItemActive {
+  background: rgba(14, 243, 202, 0.80) !important;
+
+  img {
+    filter: brightness(0);
+  }
+
+}
+
+
+.dropdowns {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.dropdown {
+  flex-grow:1;
+  min-height: 20px;
+  width: 270px;
+}
+
+
+.subtitle {
+  margin-top: 16px;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.checkoutRanks {
+  margin-top: 16px;
+  display: flex;
+  width: 272px;
+  justify-content: space-between;
+}
+
+.ranksImgWrapper {
+  display: flex;
+  width: 108px;
+  justify-content: space-between;
+}
+
+.ranksWrapper {
+  text-align: center;
+}
+
+.rankText {
+  margin-top: 4px;
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 3px;
+  color: #0EF3CA;
+  margin-bottom: 16px;
+}
+
+.additionalServicesBlock {
+  padding-top: 16px;
+  padding-bottom: 16px;
+  border-top: 1px solid rgba(255, 255, 255, 0.50);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.50);
+
+
+
+
+}
+
+
+.servicesList {
+  margin-top: 26px;
 }
