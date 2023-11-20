@@ -101,10 +101,12 @@
   height: 50px;
   border-radius: 7.5px;
   background: rgba(14, 243, 202, 0.30);
+  cursor: pointer;
 }
 
 .rankImgItemActive {
   background: rgba(14, 243, 202, 0.80) !important;
+  cursor: unset;
 }
 
 
@@ -124,10 +126,12 @@
   height: 50px;
   border-radius: 7.5px;
   background: rgba(14, 243, 202, 0.30);
+  cursor: pointer;
 }
 
 .rankNumberItemActive {
   background: rgba(14, 243, 202, 0.80) !important;
+  cursor: unset;
 
   img {
     filter: brightness(0);
@@ -280,3 +284,6 @@
   }
 
 }
+
+
+

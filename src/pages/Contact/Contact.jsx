@@ -1,8 +1,14 @@
 import TopBgWrapper from "@/components/ui/TopBgWrapper/TopBgWrapper.jsx";
 
 import s from'./Contact.module.scss'
+import {useEffect} from "react";
 
 const Contact = () => {
+
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
+
   return (
     <>
       <TopBgWrapper classname={s.bgWrapperContact}>

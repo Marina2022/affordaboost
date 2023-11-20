@@ -1,8 +1,14 @@
 import TopBgWrapper from "@/components/ui/TopBgWrapper/TopBgWrapper.jsx";
 import s from "@/pages/Coaching/Coaching.module.scss";
 import CoachingCards from "@/components/features/CoachingPage/CoachingCards.jsx";
+import {useEffect} from "react";
 
 const Coaching = () => {
+
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
+
   return (
     <TopBgWrapper classname={s.coachingBg}>
       <div className={s.middleBg}></div>

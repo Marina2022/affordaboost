@@ -1,5 +1,12 @@
 import s from './Checkout.module.scss';
-import {additionalServices, rankNumbers, rankPictures, testOptions} from "@/data/data-chechout.js";
+import {
+  additionalServices,
+  RANK_IMG_ADDING,
+  RANK_NUMBER_ADDING,
+  rankNumbers,
+  rankPictures,
+  testOptions
+} from "@/data/data-chechout.js";
 import {useState} from "react";
 import cn from "classnames";
 import Select from "@/components/ui/Select/Select.jsx";
@@ -9,11 +16,11 @@ const Checkout = () => {
 
   //current rank
   const [selectedImg, setSelectedImg] = useState(1)
-  const [selectedNumber, setSelectedNumber] = useState(1)
+  const [selectedNumber, setSelectedNumber] = useState(2)
 
   //desired rank
   const [selectedDesiredImg, setSelectedDesiredImg] = useState(1)
-  const [selectedDesiredNumber, setSelectedDesiredNumber] = useState(1)
+  const [selectedDesiredNumber, setSelectedDesiredNumber] = useState(2)
 
   // dropdowns values (can be used in total amount formula)
   const [currentLPH, setCurrentLPH] = useState(null)
@@ -40,14 +47,16 @@ const Checkout = () => {
   }
 
   // assume every rank img adds $150 and every rank number adds $100 to total amount
-  const RANK_IMG_ADDING = 150
-  const RANK_NUMBER_ADDING = 100
+  // const RANK_IMG_ADDING = 150
+  // const RANK_NUMBER_ADDING = 100
+  // the consts are now importing from data/data-checkout.js
 
   // counting additional services sum:
   const additionalServicesSum = services.reduce((acc, item) => acc + (item.on ? item.price : 0), 0)
 
   //total amount formula  (values of dropdowns can be easily added to the formula if needed)
-  const totalAmount = (selectedDesiredImg - selectedImg) * RANK_IMG_ADDING + (selectedDesiredNumber - selectedNumber) * RANK_NUMBER_ADDING + additionalServicesSum
+  let totalAmount = (selectedDesiredImg - selectedImg) * RANK_IMG_ADDING + (selectedNumber-selectedDesiredNumber) * RANK_NUMBER_ADDING + additionalServicesSum
+  if (totalAmount < 0) totalAmount = 0
 
   const formatter = new Intl.NumberFormat("en", {
     style: "currency",
@@ -76,7 +85,9 @@ const Checkout = () => {
                     })}
 
                         key={ind}
-                        onClick={() => setSelectedImg(img.value)}
+                        onClick={() => {
+                          setSelectedImg(img.value)
+                        }}
 
                     >
                       <img src={img.img} alt="img"/>
@@ -134,7 +145,10 @@ const Checkout = () => {
                     })}
 
                         key={ind}
-                        onClick={() => setSelectedDesiredImg(img.value)}
+                        onClick={() => {
+                          // if (img.value < selectedImg) return  // validation
+                          setSelectedDesiredImg(img.value)
+                        }}
 
                     >
                       <img src={img.img} alt=""/>
@@ -154,7 +168,10 @@ const Checkout = () => {
                     })}
 
                         key={ind}
-                        onClick={() => setSelectedDesiredNumber(number.value - 1)}
+                        onClick={() => {
+                          // if (selectedNumber < number.value - 1) return
+                          setSelectedDesiredNumber(number.value - 1)
+                        }}
                     >
                       <img src={number.numberImg} alt=""/>
                     </li>

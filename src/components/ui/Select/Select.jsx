@@ -51,7 +51,7 @@ const Select = ({selectChangeHandler, options, defaultValue = null, placeholder 
           lineHeight: 1.4,
           color: '#08291E',
           background: '#B8EADC',
-          width: 300,
+
         }),
       }}
     />

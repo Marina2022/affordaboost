@@ -50,10 +50,10 @@ export const coachingCards = [
 
   {
     img: img3,
-    titleStart: 'Chalanger',
+    titleStart: 'Challenger',
     titleEnd: 'Coaching',
     text: 'Individual Coaching Session carried out by verified MBS Master Coach/Booster',
-    priceFrom: 59,
+    priceFrom: 90,
     options: [
       {
         value: 2,

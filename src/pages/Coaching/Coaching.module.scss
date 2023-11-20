@@ -5,6 +5,10 @@
   margin-bottom: -400px;
   z-index: 4;
 
+  @media (max-width: 1320px) {
+    margin-bottom: -300px;
+  }
+
   @media (max-width: 744px) {
     margin-bottom: -100px;
   }
@@ -38,7 +42,6 @@
 
 
   @media (max-width: 1320px) {
-    font-size: 40px;
     max-width: 1000px;
   }
   @media (max-width: 744px) {

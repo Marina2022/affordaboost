@@ -14,6 +14,10 @@ import numberImg2 from '@/assets/checkout/numbers/num2.svg'
 import numberImg3 from '@/assets/checkout/numbers/num3.svg'
 import numberImg4 from '@/assets/checkout/numbers/num4.svg'
 
+export const RANK_IMG_ADDING = 150
+export const RANK_NUMBER_ADDING = 100
+
+
 export const rankPictures = [
   {value: 0, img: img1, name: 'name-1'},
   {value: 1, img: img2, name: 'Iron'},
@@ -28,10 +32,11 @@ export const rankPictures = [
 ]
 
 export const rankNumbers = [
-  {value: 1, numberImg: numberImg1},
-  {value: 2, numberImg: numberImg2},
-  {value: 3, numberImg: numberImg3},
   {value: 4, numberImg: numberImg4},
+  {value: 3, numberImg: numberImg3},
+  {value: 2, numberImg: numberImg2},
+  {value: 1, numberImg: numberImg1},
+
 ]
 
 export const testOptions = [
