@@ -3,6 +3,7 @@ import Header from "../Header/Header.jsx";
 import Footer from "../Footer/Footer.jsx";
 import s from './AppLayout.module.scss'
 import StopHesitating from "@/components/layout/StopHesitating/StopHesitating.jsx";
+import Discord from "@/components/layout/Discrord/Discrord.jsx";
 
 const AppLayout = () => {
   return (
@@ -16,6 +17,8 @@ const AppLayout = () => {
 
       </main>
       <Footer/>
+
+      <Discord />
     </div>
   );
 };

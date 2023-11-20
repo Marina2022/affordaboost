@@ -5,21 +5,26 @@ import cn from "classnames";
 import Select from "@/components/ui/Select/Select.jsx";
 import Service from "@/components/features/BoostingPageCheckout/Service/Service.jsx";
 
-
 const Checkout = () => {
 
+  //current rank
   const [selectedImg, setSelectedImg] = useState(1)
   const [selectedNumber, setSelectedNumber] = useState(1)
-  const [currentLPH, setCurrentLPH] = useState(null)
-  const [LPGain, setLPGain] = useState(null)
 
+  //desired rank
   const [selectedDesiredImg, setSelectedDesiredImg] = useState(1)
   const [selectedDesiredNumber, setSelectedDesiredNumber] = useState(1)
+
+  // dropdowns values (can be used in total amount formula)
+  const [currentLPH, setCurrentLPH] = useState(null)
+  const [LPGain, setLPGain] = useState(null)
   const [server, setServer] = useState(null)
   const [type, setType] = useState(null)
 
+  // additional services object
   const [services, setServices] = useState(additionalServices)
 
+  //onChange handlers
   const selectCurrentLPHandler = ({value}) => setCurrentLPH(value)
   const selectLPGain = ({value}) => setLPGain(value)
   const selectServer = ({value}) => setServer(value)
@@ -31,9 +36,24 @@ const Checkout = () => {
         return service
       }
     )
-
     setServices(newServices)
   }
+
+  // assume every rank img adds $150 and every rank number adds $100 to total amount
+  const RANK_IMG_ADDING = 150
+  const RANK_NUMBER_ADDING = 100
+
+  // counting additional services sum:
+  const additionalServicesSum = services.reduce((acc, item) => acc + (item.on ? item.price : 0), 0)
+
+  //total amount formula  (values of dropdowns can be easily added to the formula if needed)
+  const totalAmount = (selectedDesiredImg - selectedImg) * RANK_IMG_ADDING + (selectedDesiredNumber - selectedNumber) * RANK_NUMBER_ADDING + additionalServicesSum
+
+  const formatter = new Intl.NumberFormat("en", {
+    style: "currency",
+    currency: "USD",
+    minimumFractionDigits: 2
+  });
 
   return (
     <div className={s.checkoutBlock}>
@@ -158,11 +178,9 @@ const Checkout = () => {
           </div>
 
         </div>
-
         <div className={s.checkoutPart}>
           <h3 className={s.rankHeader}>Checkout</h3>
           <p className={s.subtitle}>Selected booting service</p>
-
           <div className={s.checkoutRanks}>
             <div className={s.ranksWrapper}>
               <div className={s.ranksImgWrapper}>
@@ -200,26 +218,39 @@ const Checkout = () => {
               </div>
             </div>
           </div>
-
           <div className={s.additionalServicesBlock}>
             <h3 className={s.rankHeader}>Additional services</h3>
-
             <ul className={s.servicesList}>
-
               {
                 services.map((service, index) => <Service service={service} key={index} onCheck={checkHandler}/>)
               }
-
             </ul>
-
           </div>
-
-
+          <div className={s.totalAmount}>
+            <p className={s.totalText}>Total Amount</p>
+            <p className={s.totalSum}>
+              {formatter.format(totalAmount)}
+            </p>
+          </div>
+          <button onClick={() => console.log('total amount =', totalAmount)} className={s.btn}>
+            <span className={s.btnText}>rank up now</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24" fill="none">
+              <g clipPath="url(#clip0_96_880)">
+                <path d="M23.5 6L14 15.5L9 10.5L1.5 18" stroke="#00483B" strokeWidth="2" strokeLinecap="round"
+                      strokeLinejoin="round"/>
+                <path d="M17.5 6H23.5V12" stroke="#00483B" strokeWidth="2" strokeLinecap="round"
+                      strokeLinejoin="round"/>
+              </g>
+              <defs>
+                <clipPath id="clip0_96_880">
+                  <rect width="24" height="24" fill="white" transform="translate(0.5)"/>
+                </clipPath>
+              </defs>
+            </svg>
+          </button>
+          <p className={s.bottomText}>Approximate completion time: 7-11 days</p>
         </div>
-
-
       </div>
-
     </div>
   );
 };
