@@ -5,7 +5,6 @@ import Faq from "@/components/ui/Faq/Faq.jsx";
 import {useEffect} from "react";
 
 const FaqPage = () => {
-
   useEffect(() => {
     window.scrollTo(0, 0)
   }, [])

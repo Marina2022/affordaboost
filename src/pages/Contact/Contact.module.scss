@@ -1,7 +1,6 @@
 .main {
   padding-top: 200px;
   min-height: 1112px;
-
 }
 
 .title {
@@ -30,13 +29,11 @@
   letter-spacing: 3px;
   text-transform: uppercase;
 
-
   @media (max-width: 1320px) {
   }
   @media (max-width: 744px) {
     font-size: 24px;
   }
-
 }
 
 .middle {
@@ -53,7 +50,6 @@
     margin-bottom: -100px;
   }
 }
-
 
 .bgWrapperContact {
   @media(min-width: 1321px) {

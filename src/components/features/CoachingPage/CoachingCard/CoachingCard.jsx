@@ -1,17 +1,12 @@
-
 import s from './CoachingCard.module.scss';
 import {useState} from "react";
 import Select from "@/components/ui/Select/Select.jsx";
 
-
 const CoachingCard = ({card}) => {
-
   const [selectValue, setSelectValue] = useState(2)
-
   const selectChangeHandler = ({value}) => {
     setSelectValue(value)
   }
-
   const resultPrice = selectValue * card.priceFrom
 
   return (
@@ -41,9 +36,14 @@ const CoachingCard = ({card}) => {
         <div className={s.order}>
           <p className={s.orderLabel}>Order:</p>
 
-          <Select options={card.options} selectChangeHandler={selectChangeHandler} defaultValue={card.options[0]} />
+          <Select options={card.options} selectChangeHandler={selectChangeHandler} defaultValue={card.options[0]}/>
 
-          <button onClick={() => console.log('price to pay =', resultPrice)}
+          <button onClick={() => console.log({
+            priceFrom: card.priceFrom,
+            selectedHours: selectValue,
+            totalAmount: resultPrice,
+          })
+          }
                   className={s.orderBtn}>
             <div className={s.btnTextWrapper}>
               <div className={s.summary}>
@@ -54,9 +54,7 @@ const CoachingCard = ({card}) => {
               </div>
             </div>
           </button>
-
         </div>
-
       </div>
     </div>
   );

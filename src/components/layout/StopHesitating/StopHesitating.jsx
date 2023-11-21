@@ -4,9 +4,7 @@ import cn from "classnames";
 
 const StopHesitating = ({classname}) => {
   return (
-
     <div className={cn(classname, s.background)}>
-
       <div className={s.gradient}>
         <div className='container'>
           <h2 className={s.title}>Stop hesitating!</h2>
@@ -17,11 +15,8 @@ const StopHesitating = ({classname}) => {
           </span> rank <span
             className={s.highlight}>today.</span>
           </p>
-
-
           <CallToActionButtons classname={s.center}/>
         </div>
-
       </div>
     </div>
   );

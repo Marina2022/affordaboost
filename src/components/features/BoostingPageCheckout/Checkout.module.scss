@@ -1,12 +1,5 @@
 .checkoutBlock {
   width: 100%;
-
-
-  @media (max-width: 1320px) {
-  }
-
-  @media (max-width: 744px) {
-  }
 }
 
 .wrapper {
@@ -74,7 +67,6 @@
 
 }
 
-
 .rankImgs {
   display: flex;
   margin-bottom: 24px;
@@ -89,7 +81,6 @@
     @media (max-width: 660px) {
       margin-bottom: 4px;
     }
-
   }
 }
 
@@ -108,7 +99,6 @@
   background: rgba(14, 243, 202, 0.80) !important;
   cursor: unset;
 }
-
 
 .rankNumbers {
   display: flex;
@@ -136,9 +126,7 @@
   img {
     filter: brightness(0);
   }
-
 }
-
 
 .dropdowns {
   display: flex;
@@ -146,22 +134,22 @@
   gap: 16px;
   margin-top: 32px;
 
+
   @media (max-width: 660px) {
     flex-wrap: wrap;
   }
-
 }
 
 .dropdown {
   flex-grow: 1;
   min-height: 20px;
   width: 270px;
+  max-width: 348px;
 
   @media (max-width: 660px) {
     width: 100%;
   }
 }
-
 
 .subtitle {
   margin-top: 16px;
@@ -177,7 +165,6 @@
 
   @media (max-width: 1320px) {
     margin: 16px auto 0;
-
   }
 }
 
@@ -205,9 +192,7 @@
   padding-bottom: 30px;
   border-top: 1px solid rgba(255, 255, 255, 0.50);
   border-bottom: 1px solid rgba(255, 255, 255, 0.50);
-
 }
-
 
 .servicesList {
   margin-top: 26px;
@@ -216,9 +201,9 @@
 .totalAmount {
   display: flex;
   justify-content: space-between;
-  margin-top: 24px;
+  margin-top: 32px;
   align-items: center;
-  margin-bottom: 26px;
+  margin-bottom: 34px;
 }
 
 .totalText {
@@ -259,9 +244,7 @@
       display: none;
     }
   }
-
 }
-
 
 .btnText {
   margin-right: 16px;
@@ -271,16 +254,14 @@
   }
 }
 
-
 .bottomText {
   font-size: 14px;
   font-weight: 400;
-  margin-top: 24px;
+  margin-top: 40px;
 
 
   @media (max-width: 1320px) {
     margin-top: 32px;
-    margin-bottom: 10px;
   }
 
 }

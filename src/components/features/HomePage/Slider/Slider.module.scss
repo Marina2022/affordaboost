@@ -1,15 +1,10 @@
 .wrapper {
   width: 100%;
-
 }
 
 .emptySlide {
   width: 1px;
   height: 1px;
-}
-
-.swiper {
-  //height: 400px;
 }
 
 .swiper-slide {
@@ -19,7 +14,6 @@
 .swiper-wrapper {
   align-items: stretch;
 }
-
 
 .btns {
   position: relative;
@@ -43,6 +37,4 @@
       color: red;
     }
   }
-
-
 }

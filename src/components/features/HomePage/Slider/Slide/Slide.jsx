@@ -2,9 +2,7 @@ import s from './Slide.module.scss'
 import Rating from "@/components/ui/Rating/Rating.jsx";
 
 const Slide = ({info}) => {
-
   const {rating, author, title, text, date} = info
-
   return (
     <div className={s.slide}>
       <Rating rating={rating}/>

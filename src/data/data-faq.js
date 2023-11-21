@@ -31,7 +31,6 @@ export const homePageFaq = [
 ]
 
 
-
 export const faqPageFaq = [
   {
     question: 'How does our rank boosting work?',

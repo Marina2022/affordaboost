@@ -4,7 +4,6 @@ import CoachingCards from "@/components/features/CoachingPage/CoachingCards.jsx"
 import {useEffect} from "react";
 
 const Coaching = () => {
-
   useEffect(() => {
     window.scrollTo(0, 0)
   }, [])

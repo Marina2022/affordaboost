@@ -1,4 +1,3 @@
-import s from './Faq.module.scss'
 import FaqItem from "@/components/ui/Faq/FaqItem/FaqItem.jsx";
 
 const Faq = ({data, classname}) => {
@@ -8,7 +7,6 @@ const Faq = ({data, classname}) => {
           data.map((item, index) => <FaqItem key={index} faqItem={item}/>)
         }
       </ul>
-
   );
 };
 

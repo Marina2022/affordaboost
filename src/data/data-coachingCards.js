@@ -47,7 +47,6 @@ export const coachingCards = [
     ]
   },
 
-
   {
     img: img3,
     titleStart: 'Challenger',
@@ -69,5 +68,4 @@ export const coachingCards = [
       },
     ]
   },
-
 ]

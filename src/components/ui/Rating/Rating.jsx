@@ -1,5 +1,4 @@
 import s from './Rating.module.scss';
-
 import starImg from '@/assets/ranking-star.svg'
 
 const Rating = ({rating = 0}) => {

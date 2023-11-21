@@ -25,7 +25,6 @@ const Hero = () => {
               Why choose us
               Scroll
             </div>
-
             <button className={s.scrollBtn} onClick={onScrollBtnClick}>
               <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48" fill="none">
                 <path d="M24 10L24 38" stroke="#0EF3CA" strokeWidth="2" strokeLinecap="round"

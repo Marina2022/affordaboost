@@ -3,13 +3,10 @@ import Slider from "@/components/features/HomePage/Slider/Slider.jsx";
 
 const Community = () => {
   return (
-
     <div className={s.communityBlock}>
-
       <div className={s.communityWrapper}>
         <div className={s.bgRightBottom}></div>
         <div className={s.bgLeftBottom}></div>
-
         <div className={s.svgWrapper}>
           <svg className={s.bgBottomSVG} xmlns="http://www.w3.org/2000/svg"
                viewBox="0 0 1920 950" fill="none">
@@ -18,7 +15,6 @@ const Community = () => {
             </g>
           </svg>
         </div>
-
 
         <div className='container'>
           <h2 className={s.title}>

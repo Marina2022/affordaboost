@@ -18,7 +18,6 @@
     background-position-y: 0;
     background-position-x: 0, -500px;
   }
-
 }
 
 .secondBg {
@@ -35,6 +34,7 @@
   @media (max-width: 1320px) {
     width: 475.76px;
     height: 600px;
+    filter: blur(100px);
   }
 
   @media (max-width: 744px) {
@@ -71,7 +71,6 @@
   height: 316px;
   border-radius: 316px;
   background: rgba(204, 177, 78, 0.50);
-  //mix-blend-mode: color;
   filter: blur(50px);
   position: absolute;
   left: 50%;

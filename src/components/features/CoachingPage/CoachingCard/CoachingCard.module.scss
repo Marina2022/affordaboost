@@ -6,7 +6,6 @@
   overflow: hidden;
   border-radius: 5px;
 
-
   @media (max-width: 1320px) {
     max-width: 680px;
     margin: 0 auto 24px;
@@ -38,7 +37,6 @@
     align-items: center;
   }
 }
-
 
 .picture {
   grid-column: 1 / 2;
@@ -81,7 +79,6 @@
     margin-left: 0;
     max-width: unset;
   }
-
 }
 
 .text {
@@ -105,8 +102,6 @@
     margin-bottom: 16px;
     align-self: center;
   }
-
-
 }
 
 .price {
@@ -125,9 +120,7 @@
     align-self: center;
     margin-bottom: 25px;
   }
-
 }
-
 
 .priceText {
   text-align: center;
@@ -160,7 +153,6 @@
   }
 }
 
-
 .order {
   display: flex;
   flex-direction: column;
@@ -188,7 +180,6 @@
   margin-bottom: 6px;
 }
 
-
 .orderBtn {
   width: 100%;
   margin-top: 25px;
@@ -210,10 +201,8 @@
   @media (max-width: 744px) {
     margin: 0 auto;
     display: inline-block;
-
   }
 }
-
 
 .summary {
   font-size: 20px;
@@ -232,7 +221,6 @@
   font-size: 35px;
   text-align: left;
 }
-
 
 .bgGreenDesktop {
   z-index: 1;
@@ -263,7 +251,6 @@
   }
 }
 
-
 .bgGreenTablet {
   @media (max-width: 1320px) and (min-width: 744px) {
     z-index: 1;
@@ -291,8 +278,6 @@
     filter: blur(5px);
   }
 }
-
-
 
 .bgGreenMobile {
   @media (max-width: 744px) {

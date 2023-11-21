@@ -1,11 +1,8 @@
 import s from './Checkout.module.scss';
 import {
-  additionalServices,
-  RANK_IMG_ADDING,
-  RANK_NUMBER_ADDING,
+  additionalServices, currentLPOptions, LPGainOptions,
   rankNumbers,
-  rankPictures,
-  testOptions
+  ranks, serverOptions,
 } from "@/data/data-chechout.js";
 import {useState} from "react";
 import cn from "classnames";
@@ -16,26 +13,24 @@ const Checkout = () => {
 
   //current rank
   const [selectedImg, setSelectedImg] = useState(1)
-  const [selectedNumber, setSelectedNumber] = useState(2)
+  const [selectedNumber, setSelectedNumber] = useState(1)
 
   //desired rank
   const [selectedDesiredImg, setSelectedDesiredImg] = useState(1)
-  const [selectedDesiredNumber, setSelectedDesiredNumber] = useState(2)
+  const [selectedDesiredNumber, setSelectedDesiredNumber] = useState(1)
 
   // dropdowns values (can be used in total amount formula)
-  const [currentLPH, setCurrentLPH] = useState(null)
+  const [currentLP, setCurrentLP] = useState(null)
   const [LPGain, setLPGain] = useState(null)
   const [server, setServer] = useState(null)
-  const [type, setType] = useState(null)
 
   // additional services object
   const [services, setServices] = useState(additionalServices)
 
   //onChange handlers
-  const selectCurrentLPHandler = ({value}) => setCurrentLPH(value)
+  const selectCurrentLPHandler = ({value}) => setCurrentLP(value)
   const selectLPGain = ({value}) => setLPGain(value)
   const selectServer = ({value}) => setServer(value)
-  const selectType = ({value}) => setType(value)
 
   const checkHandler = (title) => {
     const newServices = services.map((service) => {
@@ -46,17 +41,42 @@ const Checkout = () => {
     setServices(newServices)
   }
 
-  // assume every rank img adds $150 and every rank number adds $100 to total amount
-  // const RANK_IMG_ADDING = 150
-  // const RANK_NUMBER_ADDING = 100
-  // the consts are now importing from data/data-checkout.js
-
   // counting additional services sum:
-  const additionalServicesSum = services.reduce((acc, item) => acc + (item.on ? item.price : 0), 0)
+  const additionalServicesPercentSum = services.reduce((acc, item) => acc + (item.on ? item.price : 0), 0)
 
-  //total amount formula  (values of dropdowns can be easily added to the formula if needed)
-  let totalAmount = (selectedDesiredImg - selectedImg) * RANK_IMG_ADDING + (selectedNumber-selectedDesiredNumber) * RANK_NUMBER_ADDING + additionalServicesSum
-  if (totalAmount < 0) totalAmount = 0
+
+  // counting rank changing price
+
+  let rankChangingPrice = 0
+
+  const diffArray = ranks.slice(selectedImg, selectedDesiredImg + 1)
+
+  if (diffArray.length) {
+
+    let sum = 0
+    for (let i = 0; i < diffArray.length - 1; i++) {
+      if (diffArray[i].value > 6) {
+        if (diffArray[i + 1])
+          sum += diffArray[i + 1].flatRate
+      } else {
+        sum += diffArray[i].divisionPrice * 4
+      }
+    }
+
+    const subtractDivisionsPriceFromStart = (4 - rankNumbers[selectedNumber].value) * diffArray[0].divisionPrice
+    const addDivisionsPriceFromEnd = (4 - rankNumbers[selectedDesiredNumber].value) * diffArray[diffArray.length - 1].divisionPrice
+
+    // console.log('subtractDivisionsPriceFromStart', subtractDivisionsPriceFromStart)
+    // console.log('addDivisionsPriceFromEnd', addDivisionsPriceFromEnd)
+
+    rankChangingPrice = sum - subtractDivisionsPriceFromStart + addDivisionsPriceFromEnd
+    // console.log('rankChangingPrice', rankChangingPrice)
+  }
+
+  if (rankChangingPrice < 0) rankChangingPrice = 0
+
+  const totalAmount = rankChangingPrice * (1 + additionalServicesPercentSum)
+
 
   const formatter = new Intl.NumberFormat("en", {
     style: "currency",
@@ -64,21 +84,36 @@ const Checkout = () => {
     minimumFractionDigits: 2
   });
 
+  const submitHandler = (e) => {
+    e.preventDefault()
+    console.log({
+      selectedCurrentLP: currentLP,
+      LPGain,
+      selectedServer: server,
+      currentRank: ranks[selectedImg].name,
+      currentDivision: rankNumbers[selectedNumber].value,
+      desiredRank: ranks[selectedDesiredImg].name,
+      desiredDivision: rankNumbers[selectedDesiredNumber].value,
+      totalAmount,
+      services,
+    })
+  }
+
   return (
     <div className={s.checkoutBlock}>
-      <div className={s.wrapper}>
+      <form className={s.wrapper} onSubmit={submitHandler}>
         <div className={s.ranksPart}>
           <div className={s.generalRankBlock}>
             <div className={s.headerWrapper}>
               <div>
-                <img className={s.headerImg} src={rankPictures[selectedImg].img} alt="rank image" width="50"
+                <img className={s.headerImg} src={ranks[selectedImg].img} alt="rank image" width="50"
                      height="50"/>
               </div>
               <h3 className={s.rankHeader}>Current Rank</h3>
             </div>
             <ul className={s.rankImgs}>
               {
-                rankPictures.map((img, ind) => {
+                ranks.map((img, ind) => {
                   return (
                     <li className={cn(s.rankImgItem, {
                       [s.rankImgItemActive]: selectedImg === img.value
@@ -88,14 +123,12 @@ const Checkout = () => {
                         onClick={() => {
                           setSelectedImg(img.value)
                         }}
-
                     >
                       <img src={img.img} alt="img"/>
                     </li>
                   )
                 })
               }
-
             </ul>
 
             <ul className={s.rankNumbers}>
@@ -103,11 +136,12 @@ const Checkout = () => {
                 rankNumbers.map((number, ind) => {
                   return (
                     <li className={cn(s.rankNumberItem, {
-                      [s.rankNumberItemActive]: selectedNumber === number.value - 1
+                      [s.rankNumberItemActive]: selectedNumber === ind
                     })}
 
                         key={ind}
-                        onClick={() => setSelectedNumber(number.value - 1)}
+                      // onClick={() => setSelectedNumber(number.value - 1)}
+                        onClick={() => setSelectedNumber(ind)}
                     >
                       <img src={number.numberImg} alt=""/>
                     </li>
@@ -118,11 +152,11 @@ const Checkout = () => {
 
             <div className={s.dropdowns}>
               <div className={s.dropdown}>
-                <Select options={testOptions} selectChangeHandler={selectCurrentLPHandler}
+                <Select options={currentLPOptions} selectChangeHandler={selectCurrentLPHandler}
                         placeholder='Select Current LP'/>
               </div>
               <div className={s.dropdown}>
-                <Select options={testOptions} selectChangeHandler={selectLPGain} placeholder='Select LP Gain'/>
+                <Select options={LPGainOptions} selectChangeHandler={selectLPGain} placeholder='Select LP Gain'/>
               </div>
             </div>
           </div>
@@ -131,14 +165,14 @@ const Checkout = () => {
           <div className={s.generalRankBlock}>
             <div className={s.headerWrapper}>
               <div>
-                <img className={s.headerImg} src={rankPictures[selectedDesiredImg].img} alt="rank image" width="50"
+                <img className={s.headerImg} src={ranks[selectedDesiredImg].img} alt="rank image" width="50"
                      height="50"/>
               </div>
               <h3 className={s.rankHeader}>Desired Rank</h3>
             </div>
             <ul className={s.rankImgs}>
               {
-                rankPictures.map((img, ind) => {
+                ranks.map((img, ind) => {
                   return (
                     <li className={cn(s.rankImgItem, {
                       [s.rankImgItemActive]: selectedDesiredImg === img.value
@@ -146,17 +180,14 @@ const Checkout = () => {
 
                         key={ind}
                         onClick={() => {
-                          // if (img.value < selectedImg) return  // validation
                           setSelectedDesiredImg(img.value)
                         }}
-
                     >
                       <img src={img.img} alt=""/>
                     </li>
                   )
                 })
               }
-
             </ul>
 
             <ul className={s.rankNumbers}>
@@ -164,13 +195,12 @@ const Checkout = () => {
                 rankNumbers.map((number, ind) => {
                   return (
                     <li className={cn(s.rankNumberItem, {
-                      [s.rankNumberItemActive]: selectedDesiredNumber === number.value - 1
+                      [s.rankNumberItemActive]: selectedDesiredNumber === ind
                     })}
 
                         key={ind}
                         onClick={() => {
-                          // if (selectedNumber < number.value - 1) return
-                          setSelectedDesiredNumber(number.value - 1)
+                          setSelectedDesiredNumber(ind)
                         }}
                     >
                       <img src={number.numberImg} alt=""/>
@@ -182,19 +212,12 @@ const Checkout = () => {
 
             <div className={s.dropdowns}>
               <div className={s.dropdown}>
-                <Select options={testOptions} selectChangeHandler={selectServer} placeholder='Select Server'/>
+                <Select options={serverOptions} selectChangeHandler={selectServer} placeholder='Select Server'/>
               </div>
-
-              <div className={s.dropdown}>
-                <Select options={testOptions} selectChangeHandler={selectType} placeholder='Select Type'/>
-              </div>
-
-
             </div>
-
           </div>
-
         </div>
+
         <div className={s.checkoutPart}>
           <h3 className={s.rankHeader}>Checkout</h3>
           <p className={s.subtitle}>Selected booting service</p>
@@ -202,14 +225,14 @@ const Checkout = () => {
             <div className={s.ranksWrapper}>
               <div className={s.ranksImgWrapper}>
                 <div className={cn(s.rankImgItem, s.rankImgItemActive)}>
-                  <img src={rankPictures[selectedImg].img} alt="selected rank"/>
+                  <img src={ranks[selectedImg].img} alt="selected rank"/>
                 </div>
                 <div className={cn(s.rankNumberItem, s.rankNumberItemActive)}>
                   <img src={rankNumbers[selectedNumber].numberImg} alt="selected rank"/>
                 </div>
               </div>
               <div className={s.rankText}>
-                {rankPictures[selectedImg].name} {rankNumbers[selectedNumber].value}
+                {ranks[selectedImg].name} {rankNumbers[selectedNumber].value}
               </div>
             </div>
 
@@ -223,7 +246,7 @@ const Checkout = () => {
             <div className={s.ranksWrapper}>
               <div className={s.ranksImgWrapper}>
                 <div className={cn(s.rankImgItem, s.rankImgItemActive)}>
-                  <img src={rankPictures[selectedDesiredImg].img} alt="selected rank"/>
+                  <img src={ranks[selectedDesiredImg].img} alt="selected rank"/>
                 </div>
                 <div className={cn(s.rankNumberItem, s.rankNumberItemActive)}>
                   <img src={rankNumbers[selectedDesiredNumber].numberImg} alt="selected rank"/>
@@ -231,7 +254,7 @@ const Checkout = () => {
               </div>
 
               <div className={s.rankText}>
-                {rankPictures[selectedDesiredImg].name} {rankNumbers[selectedDesiredNumber].value}
+                {ranks[selectedDesiredImg].name}&nbsp;{rankNumbers[selectedDesiredNumber].value}
               </div>
             </div>
           </div>
@@ -239,7 +262,8 @@ const Checkout = () => {
             <h3 className={s.rankHeader}>Additional services</h3>
             <ul className={s.servicesList}>
               {
-                services.map((service, index) => <Service service={service} key={index} onCheck={checkHandler}/>)
+                services.map((service, index) => <Service service={service} key={index} onCheck={checkHandler}
+                                                          playWithBoosterDisabled={selectedDesiredImg > 6}/>)
               }
             </ul>
           </div>
@@ -249,7 +273,7 @@ const Checkout = () => {
               {formatter.format(totalAmount)}
             </p>
           </div>
-          <button onClick={() => console.log('total amount =', totalAmount)} className={s.btn}>
+          <button className={s.btn}>
             <span className={s.btnText}>rank up now</span>
             <svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24" fill="none">
               <g clipPath="url(#clip0_96_880)">
@@ -267,7 +291,7 @@ const Checkout = () => {
           </button>
           <p className={s.bottomText}>Approximate completion time: 7-11 days</p>
         </div>
-      </div>
+      </form>
     </div>
   );
 };

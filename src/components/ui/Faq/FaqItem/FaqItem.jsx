@@ -4,15 +4,12 @@ import {useState} from "react";
 import cn from "classnames";
 
 const FaqItem = ({faqItem}) => {
-
   const {question, answer} = faqItem
-
   const [open, setOpen] = useState(false)
 
   return (
     <li className={s.faqItem} onClick={() => setOpen(prev => !prev)}>
       <div className={cn(s.question, {[s.questionOpen]: open}) }>
-
         <button>
           <img className={open ? s.openBtn : ''}  src={chevronIcon} alt="toggle button"/></button>
         <span>

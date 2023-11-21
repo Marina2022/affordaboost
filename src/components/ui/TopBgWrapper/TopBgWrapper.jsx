@@ -7,7 +7,6 @@ const TopBgWrapper = ({children, classname}) => {
       <div className={s.secondBg}></div>
       <div className={s.thirdBg}></div>
       <div className={s.logoBg}></div>
-
       {children}
     </div>
   );

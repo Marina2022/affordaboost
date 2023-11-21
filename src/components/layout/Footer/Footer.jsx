@@ -7,12 +7,10 @@ import logos from "@/assets/footer/all-logos.svg"
 import footerLogo from "@/assets/footer/footer-logo.png"
 import {Link} from "react-router-dom";
 
-
 const Footer = () => {
   return (
     <footer className={s.footer}>
       <div className="container">
-
         <h2 className={s.title}>Order Experience flow</h2>
         <ul className={s.stepList}>
           <li className={s.stepItem}>
@@ -42,15 +40,11 @@ const Footer = () => {
         <div className={s.logos}>
           <img src={logos} alt="logos"/>
         </div>
-
         <Link className={s.footerLogo} to="/">
           <img src={footerLogo} alt="logo"/>
         </Link>
-
         <div className={s.links}>
-          <Link to='#'>Legal</Link>  &nbsp;&nbsp;   |&nbsp;&nbsp;   <Link to='#'>Terms of use</Link>&nbsp;&nbsp;   |&nbsp;&nbsp;   <Link to='#'>Privacy policy</Link>&nbsp;&nbsp;   |&nbsp;&nbsp;   <Link to='#'>DMCA Notice</Link>&nbsp;&nbsp;   |&nbsp;&nbsp;   <Link to='#'>ewsletter</Link>
-        </div>
-
+          <Link to='#'>Legal</Link>  &nbsp;&nbsp;   |&nbsp;&nbsp;   <Link to='#'>Terms of use</Link>&nbsp;&nbsp;   |&nbsp;&nbsp;   <Link to='#'>Privacy policy</Link></div>
         <div className={s.copyright}>© 2014-2023 AffordeBoost - All Rights Reserved</div>
       </div>
     </footer>

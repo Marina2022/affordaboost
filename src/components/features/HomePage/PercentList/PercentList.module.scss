@@ -14,10 +14,11 @@
   @media (max-width: 744px) {
     font-size: 24px;
   }
-
 }
 
 .percentList {
+  max-width: 880px;
+  margin: 0 auto;
   display: flex;
   justify-content: space-between;
 
@@ -38,11 +39,7 @@
     max-width: unset;
     margin-bottom: 35px;
     margin-inline: 17px;
-
-
   }
-
-
 }
 
 .value {
@@ -55,13 +52,11 @@
 
   span {
     font-size: 32px;
-
   }
-
 }
 
 .text {
-  font-family: Arial;
+  font-family: Arial, sans-serif;
   font-size: 24px;
   font-weight: 700;
   line-height: 34px;

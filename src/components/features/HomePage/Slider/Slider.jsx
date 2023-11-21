@@ -30,16 +30,13 @@ const Slider = () => {
             }
           }}
         >
-
           {
             slides.map((slide, index) => <SwiperSlide key={index} ><Slide info={slide} /></SwiperSlide>)
           }
-
           <SwiperSlide >
             <div className={s.emptySlide}></div>
           </SwiperSlide>
         </Swiper>
-
         <div className={s.btns}>
         <button className="prev"></button>
         <br/>

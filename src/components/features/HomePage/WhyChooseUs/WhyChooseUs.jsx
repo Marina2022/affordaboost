@@ -1,12 +1,9 @@
 import s from './WhyChooseUs.module.scss'
 
-
 import Community from "@/components/features/HomePage/Community/Community.jsx";
 import WeBeleive from "@/components/features/HomePage/WeBelieve/WeBeleive.jsx";
 import PercentList from "@/components/features/HomePage/PercentList/PercentList.jsx";
 import Worldwide from "@/components/features/HomePage/Worldwide/Worldwide.jsx";
-
-
 
 const WhyChooseUs = () => {
   return (
@@ -17,17 +14,11 @@ const WhyChooseUs = () => {
         <p className={s.reachText}>
           Reach your dream rank effortlessly with our safeLoL Boosting, Coaching & Accounts Services.
         </p>
-
         <WeBeleive />
-
         <PercentList />
-
         <Worldwide />
-
       </div>
-
       <Community/>
-
     </div>
   );
 };

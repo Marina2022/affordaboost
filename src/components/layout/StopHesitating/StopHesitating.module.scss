@@ -48,7 +48,6 @@
   color: #0EF3CA;
 }
 
-
 .center {
   margin: -40px auto 0;
 }
@@ -58,8 +57,7 @@
   width: 100%;
   display: flex;
   align-items: center;
-
-  background: radial-gradient(50% 50% at 50% 50%, rgba(16, 22, 20, 0.00) 33.85%, #101614 100%),
+  background: radial-gradient(50% 50% at 50% 58%, rgba(16, 22, 20, 0.00) 33.85%, #101614 100%),
   url(@/assets/main-bottom-bg.png), lightgray 50% / cover no-repeat;
 
   background-position: center, center;
@@ -67,7 +65,6 @@
   @media (max-width: 744px) {
     //background-position: center 250px;
     height: 1350px;
-
   }
 }
 
@@ -81,10 +78,7 @@
     position: relative;
     top: -250px;
   }
-
-
 }
-
 
 .br {
   display: none;
