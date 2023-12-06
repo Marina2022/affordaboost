@@ -11,6 +11,10 @@ export const coachingCards = [
     priceFrom: 50,
     options: [
       {
+        value: 1,
+        label: '1 hour',
+      },
+      {
         value: 2,
         label: '2 hour',
       },
@@ -33,6 +37,14 @@ export const coachingCards = [
     priceFrom: 70,
     options: [
       {
+        value: 1,
+        label: '1 hour',
+      },
+      {
+        value: 2,
+        label: '2 hour',
+      },
+      {
         value: 2,
         label: '2 hour',
       },
@@ -54,6 +66,10 @@ export const coachingCards = [
     text: 'Individual Coaching Session carried out by verified MBS Master Coach/Booster',
     priceFrom: 90,
     options: [
+      {
+        value: 1,
+        label: '1 hour',
+      },
       {
         value: 2,
         label: '2 hour',

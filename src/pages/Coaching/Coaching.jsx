@@ -11,7 +11,7 @@ const Coaching = () => {
   return (
     <TopBgWrapper classname={s.coachingBg}>
       <div className={s.middleBg}></div>
-      <div className='container'>s
+      <div className='container'>
         <div className={s.main}>
           <h1 className={s.title}>Coaching</h1>
           <p className={s.subtitle}>Improve your skills under the guidance of the best players </p>

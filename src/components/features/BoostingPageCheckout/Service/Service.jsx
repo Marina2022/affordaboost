@@ -11,7 +11,7 @@ const Service = ({service, onCheck, playWithBoosterDisabled}) => {
         service.price ?  <div className={s.price}>+ {service.price*100}% </div> : null
         }
 
-      <div className={s.check}><Switch service={service} onCheck={onCheck}  disabled={playWithBoosterDisabled && service.id === 1 } /></div>
+      <div className={s.check}><Switch service={service} onCheck={onCheck } disabled={playWithBoosterDisabled && service.id === 1 } /></div>
     </li>
   );
 };

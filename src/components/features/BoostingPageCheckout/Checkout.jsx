@@ -19,10 +19,16 @@ const Checkout = () => {
   const [selectedDesiredImg, setSelectedDesiredImg] = useState(1)
   const [selectedDesiredNumber, setSelectedDesiredNumber] = useState(1)
 
+  const submitBtnDisabled = (selectedImg > selectedDesiredImg) || (selectedImg === selectedDesiredImg && selectedNumber >= selectedDesiredNumber)
+  || (selectedImg > 6 && selectedImg === selectedDesiredImg )
+
   // dropdowns values (can be used in total amount formula)
   const [currentLP, setCurrentLP] = useState(null)
   const [LPGain, setLPGain] = useState(null)
   const [server, setServer] = useState(null)
+
+  const [inputtedCurrentLP, setInputtedCurrentLP] = useState(null)
+  const [inputtedDesiredLP, setInputtedDesiredLP] = useState(null)
 
   // additional services object
   const [services, setServices] = useState(additionalServices)
@@ -31,6 +37,9 @@ const Checkout = () => {
   const selectCurrentLPHandler = ({value}) => setCurrentLP(value)
   const selectLPGain = ({value}) => setLPGain(value)
   const selectServer = ({value}) => setServer(value)
+
+  const inputCurrentLPHandler = (e) => setInputtedCurrentLP(+e.target.value)
+  const inputDesiredLPHandler = (e) => setInputtedDesiredLP(+e.target.value)
 
   const checkHandler = (title) => {
     const newServices = services.map((service) => {
@@ -96,6 +105,8 @@ const Checkout = () => {
       desiredDivision: rankNumbers[selectedDesiredNumber].value,
       totalAmount,
       services,
+      inputedCurrentLP: inputtedCurrentLP,
+      inputedDesiredLP: inputtedDesiredLP
     })
   }
 
@@ -111,6 +122,9 @@ const Checkout = () => {
               </div>
               <h3 className={s.rankHeader}>Current Rank</h3>
             </div>
+
+            {/*current rank block*/}
+
             <ul className={s.rankImgs}>
               {
                 ranks.map((img, ind) => {
@@ -130,30 +144,35 @@ const Checkout = () => {
                 })
               }
             </ul>
-
-            <ul className={s.rankNumbers}>
-              {
-                rankNumbers.map((number, ind) => {
-                  return (
-                    <li className={cn(s.rankNumberItem, {
-                      [s.rankNumberItemActive]: selectedNumber === ind
-                    })}
-
-                        key={ind}
-                      // onClick={() => setSelectedNumber(number.value - 1)}
-                        onClick={() => setSelectedNumber(ind)}
-                    >
-                      <img src={number.numberImg} alt=""/>
-                    </li>
-                  )
-                })
-              }
-            </ul>
+            {
+              selectedImg < 7 && <ul className={s.rankNumbers}>
+                {
+                  rankNumbers.map((number, ind) => {
+                    return (
+                      <li className={cn(s.rankNumberItem, {
+                        [s.rankNumberItemActive]: selectedNumber === ind
+                      })}
+                          key={ind}
+                          onClick={() => setSelectedNumber(ind)}
+                      >
+                        <img src={number.numberImg} alt=""/>
+                      </li>
+                    )
+                  })
+                }
+              </ul>
+            }
 
             <div className={s.dropdowns}>
               <div className={s.dropdown}>
-                <Select options={currentLPOptions} selectChangeHandler={selectCurrentLPHandler}
-                        placeholder='Select Current LP'/>
+                {
+                  selectedImg < 7 && <Select options={currentLPOptions} selectChangeHandler={selectCurrentLPHandler}
+                                             placeholder='Select Current LP'/>
+                }
+                {
+                  selectedImg >= 7 && <input className={s.input} type="number" placeholder="Enter Current LP"
+                                             onChange={inputCurrentLPHandler}/>
+                }
               </div>
               <div className={s.dropdown}>
                 <Select options={LPGainOptions} selectChangeHandler={selectLPGain} placeholder='Select LP Gain'/>
@@ -161,7 +180,7 @@ const Checkout = () => {
             </div>
           </div>
 
-
+          {/*desired rank block */}
           <div className={s.generalRankBlock}>
             <div className={s.headerWrapper}>
               <div>
@@ -190,27 +209,35 @@ const Checkout = () => {
               }
             </ul>
 
-            <ul className={s.rankNumbers}>
-              {
-                rankNumbers.map((number, ind) => {
-                  return (
-                    <li className={cn(s.rankNumberItem, {
-                      [s.rankNumberItemActive]: selectedDesiredNumber === ind
-                    })}
 
-                        key={ind}
-                        onClick={() => {
-                          setSelectedDesiredNumber(ind)
-                        }}
-                    >
-                      <img src={number.numberImg} alt=""/>
-                    </li>
-                  )
-                })
-              }
-            </ul>
+            {
+              selectedDesiredImg < 7 && <ul className={s.rankNumbers}>
+                {
+                  rankNumbers.map((number, ind) => {
+                    return (
+                      <li className={cn(s.rankNumberItem, {
+                        [s.rankNumberItemActive]: selectedDesiredNumber === ind
+                      })}
+
+                          key={ind}
+                          onClick={() => {
+                            setSelectedDesiredNumber(ind)
+                          }}
+                      >
+                        <img src={number.numberImg} alt=""/>
+                      </li>
+                    )
+                  })
+                }
+              </ul>
+            }
 
             <div className={s.dropdowns}>
+              {/*{*/}
+              {/*  selectedDesiredImg >= 7 && <div className={s.dropdown}>*/}
+              {/*    <input className={s.input} type="number" placeholder="Enter Desired LP" onChange={inputDesiredLPHandler} />*/}
+              {/*  </div>*/}
+              {/*}*/}
               <div className={s.dropdown}>
                 <Select options={serverOptions} selectChangeHandler={selectServer} placeholder='Select Server'/>
               </div>
@@ -220,20 +247,26 @@ const Checkout = () => {
 
         <div className={s.checkoutPart}>
           <h3 className={s.rankHeader}>Checkout</h3>
-          <p className={s.subtitle}>Selected booting service</p>
+          <p className={s.subtitle}>Selected boosting service</p>
           <div className={s.checkoutRanks}>
             <div className={s.ranksWrapper}>
               <div className={s.ranksImgWrapper}>
                 <div className={cn(s.rankImgItem, s.rankImgItemActive)}>
                   <img src={ranks[selectedImg].img} alt="selected rank"/>
                 </div>
-                <div className={cn(s.rankNumberItem, s.rankNumberItemActive)}>
-                  <img src={rankNumbers[selectedNumber].numberImg} alt="selected rank"/>
+
+                {
+                  selectedImg < 7 && <div className={cn(s.rankNumberItem, s.rankNumberItemActive)}>
+                    <img src={rankNumbers[selectedNumber].numberImg} alt="selected rank"/>
+                  </div>
+                }
+              </div>
+
+              {
+                selectedImg < 7 && <div className={s.rankText}>
+                  {ranks[selectedImg].name} {rankNumbers[selectedNumber].value}
                 </div>
-              </div>
-              <div className={s.rankText}>
-                {ranks[selectedImg].name} {rankNumbers[selectedNumber].value}
-              </div>
+              }
             </div>
 
             <svg xmlns="http://www.w3.org/2000/svg" width="49" height="48" viewBox="0 0 49 48" fill="none">
@@ -248,14 +281,20 @@ const Checkout = () => {
                 <div className={cn(s.rankImgItem, s.rankImgItemActive)}>
                   <img src={ranks[selectedDesiredImg].img} alt="selected rank"/>
                 </div>
-                <div className={cn(s.rankNumberItem, s.rankNumberItemActive)}>
-                  <img src={rankNumbers[selectedDesiredNumber].numberImg} alt="selected rank"/>
-                </div>
+
+                {
+                  selectedDesiredImg < 7 && <div className={cn(s.rankNumberItem, s.rankNumberItemActive)}>
+                    <img src={rankNumbers[selectedDesiredNumber].numberImg} alt="selected rank"/>
+                  </div>
+                }
               </div>
 
-              <div className={s.rankText}>
-                {ranks[selectedDesiredImg].name}&nbsp;{rankNumbers[selectedDesiredNumber].value}
-              </div>
+              {
+                selectedDesiredImg < 7 && <div className={s.rankText}>
+                  {ranks[selectedDesiredImg].name}&nbsp;{rankNumbers[selectedDesiredNumber].value}
+                </div>
+              }
+
             </div>
           </div>
           <div className={s.additionalServicesBlock}>
@@ -263,7 +302,7 @@ const Checkout = () => {
             <ul className={s.servicesList}>
               {
                 services.map((service, index) => <Service service={service} key={index} onCheck={checkHandler}
-                                                          playWithBoosterDisabled={selectedDesiredImg > 6}/>)
+                                                          playWithBoosterDisabled={selectedDesiredImg > 6 || selectedImg > 6}/>)
               }
             </ul>
           </div>
@@ -273,7 +312,7 @@ const Checkout = () => {
               {formatter.format(totalAmount)}
             </p>
           </div>
-          <button className={s.btn}>
+          <button className={s.btn} disabled={submitBtnDisabled}>
             <span className={s.btnText}>rank up now</span>
             <svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24" fill="none">
               <g clipPath="url(#clip0_96_880)">

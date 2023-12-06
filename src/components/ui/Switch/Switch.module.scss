@@ -2,6 +2,11 @@
 display: none;
 }
 
+.check:disabled + .label  {
+  opacity: .8;
+}
+
+
 .check:checked + .label .handle {
   left: unset;
   right: 0;

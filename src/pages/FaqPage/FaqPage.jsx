@@ -12,7 +12,7 @@ const FaqPage = () => {
   return (
       <TopBgWrapper>
         <div className={s.middleBg}></div>
-        <div className='container'>s
+        <div className='container'>
           <div className={s.main}>
             <h1 className={s.title}>Frequently Asked Questions</h1>
             <p className={s.subtitle}>The knowledge is a power</p>

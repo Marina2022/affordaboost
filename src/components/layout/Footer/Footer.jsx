@@ -44,7 +44,7 @@ const Footer = () => {
           <img src={footerLogo} alt="logo"/>
         </Link>
         <div className={s.links}>
-          <Link to='#'>Legal</Link>  &nbsp;&nbsp;   |&nbsp;&nbsp;   <Link to='#'>Terms of use</Link>&nbsp;&nbsp;   |&nbsp;&nbsp;   <Link to='#'>Privacy policy</Link></div>
+          <Link to='legal'>Legal</Link>  &nbsp;&nbsp;   |&nbsp;&nbsp;   <Link to='terms'>Terms of use</Link>&nbsp;&nbsp;   |&nbsp;&nbsp;   <Link to='privacy'>Privacy policy</Link></div>
         <div className={s.copyright}>© 2014-2023 AffordeBoost - All Rights Reserved</div>
       </div>
     </footer>
