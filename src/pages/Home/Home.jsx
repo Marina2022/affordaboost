@@ -21,37 +21,37 @@ const Home = () => {
   //
   //   document.body.removeChild(element);
   // }
-
-  const onSubmit = async (e) => {
-    e.preventDefault()
-    // download('mama.txt', 'trulala')
-
-    const resp = await fetch('https://namegenerator.com/ai/generate/city-names',
-      {
-        method: "post",
-        //  headers: {
-        //    'Content-Type': 'application/json',
-        //  },
-        body: JSON.stringify( {
-          size: "medium town",
-          keywords: "elvish, dwarfish, feminine, light",
-          terrain: "mountainous",
-          description: "It is a hidden city "
-        })
-      }
-    )
-    const res = await resp.json()
-    console.log(res)
-  }
+  //
+  // const onSubmit = async (e) => {
+  //   e.preventDefault()
+  //   // download('mama.txt', 'trulala')
+  //
+  //   const resp = await fetch('https://namegenerator.com/ai/generate/city-names',
+  //     {
+  //       method: "post",
+  //       //  headers: {
+  //       //    'Content-Type': 'application/json',
+  //       //  },
+  //       body: JSON.stringify( {
+  //         size: "medium town",
+  //         keywords: "elvish, dwarfish, feminine, light",
+  //         terrain: "mountainous",
+  //         description: "It is a hidden city "
+  //       })
+  //     }
+  //   )
+  //   const res = await resp.json()
+  //   console.log(res)
+  // }
 
   return (
     <>
 
-      <form onSubmit={onSubmit} style={{marginTop: 100}}>
-        <input type="text" name="name"/>
-        <textarea></textarea>
-        <button style={{marginTop:100}}>submit</button>
-      </form>
+      {/*<form onSubmit={onSubmit} style={{marginTop: 100}}>*/}
+      {/*  <input type="text" name="name"/>*/}
+      {/*  <textarea></textarea>*/}
+      {/*  <button style={{marginTop:100}}>submit</button>*/}
+      {/*</form>*/}
 
       <Hero/>
       <WhyChooseUs/>
